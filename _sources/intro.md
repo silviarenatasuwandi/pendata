@@ -13,8 +13,11 @@ Semoga materi ini dapat bermanfaat bagi para pembaca.
 Identitas Mahasiswi : 
 
 Nama  : Silvia Renata Suwandi
+
 NIM   : 230411100094
+
 Prodi : Teknik Informatika
+
 Email : 230411100094@student.trunojoyo.ac.id
 
 
