@@ -1347,6 +1347,10 @@ Data tidak outlier :
 </div>
 </div>
 </div>
+<p>Kode ini membandingkan akurasi model K-Nearest Neighbors (KNN) sebelum dan sesudah pembersihan outlier.</p>
+<p>Pertama, fitur numerik diekstrak dari DataFrame, lalu label kelas dikonversi ke format numerik. Model Local Outlier Factor (LOF) digunakan untuk mendeteksi sekitar 10% data sebagai outlier. Dataset kemudian dibagi menjadi dua: satu dengan outlier dan satu tanpa outlier.</p>
+<p>Kedua dataset ini dipisahkan menjadi data pelatihan (80%) dan pengujian (20%). Model KNN dengan 11 tetangga diterapkan menggunakan Pipeline, yang mencakup standarisasi data sebelum pelatihan. Model pertama diuji pada data dengan outlier, sedangkan model kedua diuji pada data tanpa outlier. Akurasi dan classification report dihitung untuk masing-masing model.</p>
+<p>Sebagai hasil, kode ini menampilkan dua nilai akurasi dan laporan klasifikasi untuk melihat dampak outlier. Model tanpa outlier diperkirakan lebih akurat karena outlier bisa mengganggu perhitungan KNN. Dengan perbandingan ini, pengguna dapat menilai apakah pembersihan data meningkatkan performa model.</p>
 </section>
 <section id="menghitung-akurasi-data">
 <h4>Menghitung akurasi data<a class="headerlink" href="#menghitung-akurasi-data" title="Link to this heading">#</a></h4>
@@ -1427,6 +1431,10 @@ Iris-versicolor       1.00      1.00      1.00         7
 </div>
 </div>
 </div>
+<p>Kode ini membandingkan akurasi model K-Nearest Neighbors (KNN) sebelum dan sesudah pembersihan outlier.</p>
+<p>Pertama, fitur numerik diekstrak dari DataFrame, lalu label kelas dikonversi ke format numerik. Model Local Outlier Factor (LOF) digunakan untuk mendeteksi sekitar 10% data sebagai outlier. Dataset kemudian dibagi menjadi dua: satu dengan outlier dan satu tanpa outlier.</p>
+<p>Kedua dataset ini dipisahkan menjadi data pelatihan (80%) dan pengujian (20%). Model KNN dengan 11 tetangga diterapkan menggunakan Pipeline, yang mencakup standarisasi data sebelum pelatihan. Model pertama diuji pada data dengan outlier, sedangkan model kedua diuji pada data tanpa outlier. Akurasi dan classification report dihitung untuk masing-masing model.</p>
+<p>Sebagai hasil, kode ini menampilkan dua nilai akurasi dan laporan klasifikasi untuk melihat dampak outlier. Model tanpa outlier diperkirakan lebih akurat karena outlier bisa mengganggu perhitungan KNN. Dengan perbandingan ini, pengguna dapat menilai apakah pembersihan data meningkatkan performa model.</p>
 </section>
 </section>
 </section>
