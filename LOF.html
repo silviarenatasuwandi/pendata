@@ -431,7 +431,7 @@
 <ul class="simple">
 <li><p>Untuk setiap titik, hitung jarak jangkauan terhadap tetangga-tetangga terdekatnya.</p></li>
 <li><p>Jarak jangkauan antara titik A dan B didefinisikan sebagai:
-$<span class="math notranslate nohighlight">\(reach-dist k(A,B)=max(distance(A,B),k-distance(B)) \)</span>$</p></li>
+<span class="math notranslate nohighlight">\(reach-dist k(A,B)=max(distance(A,B),k-distance(B)) \)</span></p></li>
 </ul>
 <ol class="arabic simple" start="5">
 <li><p>Menghitung Local Reachability Density (LRD)</p></li>
@@ -439,14 +439,11 @@ $<span class="math notranslate nohighlight">\(reach-dist k(A,B)=max(distance(A,B
 <ul class="simple">
 <li><p>Hitung Local Reachability Density (LRD) untuk setiap titik, yang merupakan kebalikan dari rata-rata jarak jangkauan ke tetangga terdekatnya:</p></li>
 </ul>
-<div class="math notranslate nohighlight">
-\[\text{LRD}(A) = \frac{1}{\frac{1}{k} \sum_{B \in N_k(A)} d_{\text{reach}}(A, B)} \]</div>
-<ol class="arabic simple" start="6">
-<li><p>Menghitung Local Outlier Factor (LOF)</p></li>
-</ol>
+<p><span class="math notranslate nohighlight">\(\text{LRD}(A) = \frac{1}{\frac{1}{k} \sum_{B \in N_k(A)} d_{\text{reach}}(A, B)} \)</span>
+6. Menghitung Local Outlier Factor (LOF)</p>
 <ul class="simple">
 <li><p>Nilai LOF dihitung sebagai rata-rata rasio LRD dari tetangga terdekat terhadap LRD titik tersebut:
-$<span class="math notranslate nohighlight">\(\text{LOF}_k(A) = \frac{\sum_{B \in N_k(A)} \frac{\text{LRD}_k(B)}{\text{LRD}_k(A)}}{|N_k(A)|} \)</span>$</p></li>
+<span class="math notranslate nohighlight">\(\text{LOF}_k(A) = \frac{\sum_{B \in N_k(A)} \frac{\text{LRD}_k(B)}{\text{LRD}_k(A)}}{|N_k(A)|} \)</span></p></li>
 <li><p>Jika nilai LOF jauh lebih besar dari 1, maka titik tersebut kemungkinan besar merupakan outlier, karena kepadatan lokalnya lebih rendah dibandingkan dengan tetangga-tetangganya.</p></li>
 </ul>
 <ol class="arabic simple" start="7">
@@ -459,12 +456,11 @@ $<span class="math notranslate nohighlight">\(\text{LOF}_k(A) = \frac{\sum_{B \i
 <section id="contoh-perhitungan-lof-secara-manual">
 <h1><strong>Contoh Perhitungan LOF Secara Manua</strong>l<a class="headerlink" href="#contoh-perhitungan-lof-secara-manual" title="Link to this heading">#</a></h1>
 <p>Misalkan kita memiliki 4 titik data dalam ruang dua dimensi:
-$<span class="math notranslate nohighlight">\(A(1,1),B(1,2),C(2,2),D(8,8) \)</span>$</p>
+<span class="math notranslate nohighlight">\(A(1,1),B(1,2),C(2,2),D(8,8) \)</span></p>
 <ol class="arabic simple">
 <li><p><strong>Menghitung Jarak Antar Titik (Euclidean Distance)</strong></p></li>
 </ol>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{gathered}\text { distance }(A, B)=\sqrt{(1-1)^2+(1-2)^2}=1 \\ \text { distance }(A, C)=\sqrt{(1-2)^2+(1-2)^2}=\sqrt{2} \approx 1.41 \\ \text { distance }(A, D)=\sqrt{(1-8)^2+(1-8)^2}=9.89 \\ \text { distance }(B, C)=\sqrt{(1-2)^2+(2-2)^2}=1 \\ \text { distance }(B, D)=\sqrt{(1-8)^2+(2-8)^2}=9.22 \\ \text { distance }(C, D)=\sqrt{(2-8)^2+(2-8)^2}=8.49\end{gathered} \end{split}\]</div>
+<p><span class="math notranslate nohighlight">\(\begin{gathered}\text { distance }(A, B)=\sqrt{(1-1)^2+(1-2)^2}=1 \\ \text { distance }(A, C)=\sqrt{(1-2)^2+(1-2)^2}=\sqrt{2} \approx 1.41 \\ \text { distance }(A, D)=\sqrt{(1-8)^2+(1-8)^2}=9.89 \\ \text { distance }(B, C)=\sqrt{(1-2)^2+(2-2)^2}=1 \\ \text { distance }(B, D)=\sqrt{(1-8)^2+(2-8)^2}=9.22 \\ \text { distance }(C, D)=\sqrt{(2-8)^2+(2-8)^2}=8.49\end{gathered} \)</span></p>
 <ol class="arabic simple" start="2">
 <li><p><strong>Menentukan K Tetangga Terdekat</strong></p></li>
 </ol>
@@ -474,21 +470,19 @@ $<span class="math notranslate nohighlight">\(A(1,1),B(1,2),C(2,2),D(8,8) \)</sp
 <span class="math notranslate nohighlight">\(\begin{aligned} &amp; \operatorname{reach-dist}(D, B)=\max (\mathrm{k}-\operatorname{dist}(B), \operatorname{distance}(D, B))=\max (1,9.22)=9.22 \\ &amp; \operatorname{reach}-\operatorname{dist}(D, C)=\max (\mathrm{k} \text {-dist }(C), \operatorname{distance}(D, C))=\max (1,8.49)=8.49\end{aligned}\)</span></p></li>
 <li><p><strong>Hitung Local Reachability Density (LRD)</strong></p></li>
 </ol>
-<div class="math notranslate nohighlight">
-\[\begin{split}
+<p><span class="math notranslate nohighlight">\(
 \begin{gathered}
 \operatorname{LRD}(D)=\frac{1}{\frac{9.22+8.49}{2}}=\frac{1}{8.855} \approx 0.113 \\
 \operatorname{LRD}(B)=\frac{1}{1}=1 \\
 \operatorname{LRD}(C)=\frac{1}{1}=1
 \end{gathered}
-\end{split}\]</div>
+\)</span></p>
 <ol class="arabic simple" start="5">
 <li><p><strong>Hitung Local Outier Factor (LOF)</strong></p></li>
 </ol>
-<div class="math notranslate nohighlight">
-\[
+<p><span class="math notranslate nohighlight">\(
 \operatorname{LOF}(D)=\frac{1}{2}\left(\frac{1}{0.113}+\frac{1}{0.113}\right)=\frac{1}{2}(8.85+8.85)=8.85
-\]</div>
+\)</span></p>
 <ol class="arabic simple" start="6">
 <li><p><strong>Interpretasi</strong></p></li>
 </ol>
@@ -679,8 +673,8 @@ $<span class="math notranslate nohighlight">\(A(1,1),B(1,2),C(2,2),D(8,8) \)</sp
  10 Iris-setosa           1.5          0.1    False
 </pre></div>
 </div>
-<img alt="_images/8d4681fdb11db64c71037a7542575d97e5af0a4f63545902588329b8e0ddeb52.png" src="_images/8d4681fdb11db64c71037a7542575d97e5af0a4f63545902588329b8e0ddeb52.png" />
-<img alt="_images/2bd841a2225a1bf9e623ef0800141d23cb360bb13b9cde07ecc7290d360c7365.png" src="_images/2bd841a2225a1bf9e623ef0800141d23cb360bb13b9cde07ecc7290d360c7365.png" />
+<img alt="_images/82f15342b5476d934a39997161882118906f6f0fa804d3362f1c778d0f8a7cb2.png" src="_images/82f15342b5476d934a39997161882118906f6f0fa804d3362f1c778d0f8a7cb2.png" />
+<img alt="_images/de40b22af8ce7bf9254888469478af63a3fb1620e509654196fde060d47adbeb.png" src="_images/de40b22af8ce7bf9254888469478af63a3fb1620e509654196fde060d47adbeb.png" />
 </div>
 </div>
 </section>
