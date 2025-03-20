@@ -1347,10 +1347,13 @@ Data tidak outlier :
 </div>
 </div>
 </div>
-<p>Kode ini membandingkan akurasi model K-Nearest Neighbors (KNN) sebelum dan sesudah pembersihan outlier.</p>
-<p>Pertama, fitur numerik diekstrak dari DataFrame, lalu label kelas dikonversi ke format numerik. Model Local Outlier Factor (LOF) digunakan untuk mendeteksi sekitar 10% data sebagai outlier. Dataset kemudian dibagi menjadi dua: satu dengan outlier dan satu tanpa outlier.</p>
-<p>Kedua dataset ini dipisahkan menjadi data pelatihan (80%) dan pengujian (20%). Model KNN dengan 11 tetangga diterapkan menggunakan Pipeline, yang mencakup standarisasi data sebelum pelatihan. Model pertama diuji pada data dengan outlier, sedangkan model kedua diuji pada data tanpa outlier. Akurasi dan classification report dihitung untuk masing-masing model.</p>
-<p>Sebagai hasil, kode ini menampilkan dua nilai akurasi dan laporan klasifikasi untuk melihat dampak outlier. Model tanpa outlier diperkirakan lebih akurat karena outlier bisa mengganggu perhitungan KNN. Dengan perbandingan ini, pengguna dapat menilai apakah pembersihan data meningkatkan performa model.</p>
+<p>Kode ini digunakan untuk mendeteksi dan memisahkan outlier dari dataset yang diambil dari PostgreSQL dan MySQL.</p>
+<p>Pertama, kode terhubung ke kedua basis data menggunakan psycopg2 (PostgreSQL) dan pymysql (MySQL), lalu mengambil data dari tabel iris_postgresql dan irismysql. Data tersebut dikonversi menjadi DataFrame dan digabungkan berdasarkan id dan class menggunakan inner join, sehingga hanya data yang ada di kedua tabel yang digunakan.</p>
+<p>Selanjutnya, hanya fitur numerik (petal_length, petal_width, sepal_length, dan sepal_width) yang digunakan untuk deteksi outlier. Model Local Outlier Factor (LOF) diterapkan dengan n_neighbors=90, yang membandingkan setiap data dengan 90 tetangga terdekat. LOF memberi label 1 untuk data normal dan -1 untuk outlier.</p>
+<p>Hasil deteksi disimpan dalam kolom outlier_label, lalu dataset dibagi menjadi dua:</p>
+<p>Data normal (label 1) disimpan dalam df_filtered.
+Outlier (label -1) disimpan dalam outliers.</p>
+<p>Kode ini menampilkan jumlah total outlier, daftar data yang terdeteksi sebagai outlier, dan data yang tetap setelah pembersihan. Dengan cara ini, kualitas data bisa lebih baik dan hasil analisis atau model pembelajaran mesin menjadi lebih akurat.</p>
 </section>
 <section id="menghitung-akurasi-data">
 <h4>Menghitung akurasi data<a class="headerlink" href="#menghitung-akurasi-data" title="Link to this heading">#</a></h4>
