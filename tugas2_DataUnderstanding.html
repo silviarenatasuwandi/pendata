@@ -1530,6 +1530,37 @@ Iris-versicolor       1.00      0.86      0.92         7
 <img alt="_images/38f78370a1f1b2fb3711e74767405b5e4fd7b3a59739ec93f8059c132a1ab6dd.png" src="_images/38f78370a1f1b2fb3711e74767405b5e4fd7b3a59739ec93f8059c132a1ab6dd.png" />
 </div>
 </div>
+<ol class="arabic simple">
+<li><p>Bagian Akurasi &amp; Evaluasi Model:</p>
+<ul class="simple">
+<li><p>Akurasi 96% menunjukkan model KNN mampu mengklasifikasikan 96% data uji dengan benar, yang menandakan performa yang baik.</p></li>
+<li><p>Iris-setosa diklasifikasikan dengan sempurna (precision, recall, F1-score = 1.00).</p></li>
+<li><p>Iris-versicolor memiliki precision 1.00 tetapi recall 0.86, yang berarti beberapa sampel salah diklasifikasikan.</p></li>
+<li><p>Iris-virginica memiliki precision 0.89 tetapi recall 1.00, menandakan semua data kelas ini dikenali, tetapi ada beberapa kesalahan prediksi.</p></li>
+<li><p>Rata-rata makro dan berbobot (macro &amp; weighted F1-score) sekitar 0.95-0.96, menunjukkan keseimbangan performa model antar kelas.</p></li>
+</ul>
+</li>
+<li><p>Bagian Visualisasi Decision Boundary:</p>
+<ul class="simple">
+<li><p>Plot kiri (weights=’uniform’): Semua tetangga dalam KNN memiliki bobot yang sama, sehingga decision boundary lebih tegas dan seragam.</p></li>
+<li><p>Plot kanan (weights=’distance’): Tetangga lebih dekat mendapat bobot lebih besar, sehingga decision boundary lebih fleksibel dan menyesuaikan pola lokal data.</p></li>
+<li><p>Warna latar menunjukkan area klasifikasi masing-masing kelas:</p>
+<ul>
+<li><p>Ungu → Iris-setosa</p></li>
+<li><p>Teal (biru kehijauan) → Iris-versicolor</p></li>
+<li><p>Kuning → Iris-virginica</p></li>
+</ul>
+</li>
+<li><p>Titik data tetap sama, dengan warna yang mencerminkan kelas asli setiap sampel.</p></li>
+</ul>
+</li>
+<li><p>Kesimpulan:</p>
+<ul class="simple">
+<li><p>weights=’uniform’ → Decision boundary lebih kaku dan simetris, karena semua tetangga memberikan pengaruh yang sama.</p></li>
+<li><p>weights=’distance’ → Decision boundary lebih dinamis, mengikuti distribusi data karena tetangga yang lebih dekat berpengaruh lebih besar.</p></li>
+</ul>
+</li>
+</ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">psycopg2</span>
@@ -1635,6 +1666,92 @@ Iris-versicolor       0.75      0.43      0.55         7
 <img alt="_images/97ecfeb6f1dc25d4d2ce7c72372ccf73bde85a9045bec23297d67510657b390e.png" src="_images/97ecfeb6f1dc25d4d2ce7c72372ccf73bde85a9045bec23297d67510657b390e.png" />
 </div>
 </div>
+<p>Penjelasan Hasil Angka
+Akurasi: Model KNN mencapai 81%, artinya 81% data uji diklasifikasikan dengan benar. Ini menunjukkan performa yang cukup baik, tetapi masih ada ruang untuk perbaikan, terutama pada kelas Iris-versicolor.</p>
+<ol class="arabic simple">
+<li><p>Iris-setosa</p>
+<ul class="simple">
+<li><p>Precision: 1.00 → Semua prediksi benar.</p></li>
+<li><p>Recall: 1.00 → Semua data kelas ini diklasifikasikan dengan benar.</p></li>
+<li><p>F1-score: 1.00 → Kombinasi precision dan recall sempurna.</p></li>
+<li><p>Support: 12 → Jumlah sampel dalam data uji.</p></li>
+</ul>
+</li>
+<li><p>Iris-versicolor</p>
+<ul class="simple">
+<li><p>Precision: 0.75 → Ada beberapa kesalahan prediksi.</p></li>
+<li><p>Recall: 0.43 → Hanya 43% data kelas ini diklasifikasikan dengan benar.</p></li>
+<li><p>F1-score: 0.55 → Performa kurang memuaskan.</p></li>
+<li><p>Support: 7.</p></li>
+</ul>
+</li>
+<li><p>Iris-virginica</p>
+<ul class="simple">
+<li><p>Precision: 0.64 → Cukup baik dalam memprediksi kelas ini.</p></li>
+<li><p>Recall: 0.88 → Mayoritas data diklasifikasikan dengan benar.</p></li>
+<li><p>F1-score: 0.74 → Kombinasi cukup baik antara precision dan recall.</p></li>
+<li><p>Support: 8.</p></li>
+</ul>
+</li>
+<li><p>Overall Metrics</p>
+<ul class="simple">
+<li><p>Macro Average (tanpa memperhatikan ukuran kelas):</p>
+<ul>
+<li><p>Precision: 0.80, Recall: 0.77, F1-score: 0.76.</p></li>
+</ul>
+</li>
+<li><p>Weighted Average (mempertimbangkan ukuran kelas):</p>
+<ul>
+<li><p>Precision: 0.83, Recall: 0.81, F1-score: 0.80.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<p>Penjelasan Gambar</p>
+<ol class="arabic simple">
+<li><p>Plot Kiri (weights=’uniform’)</p>
+<ul class="simple">
+<li><p>Warna Latar:</p>
+<ul>
+<li><p>Ungu → Iris-setosa.</p></li>
+<li><p>Teal → Iris-versicolor.</p></li>
+<li><p>Kuning → Iris-virginica.</p></li>
+</ul>
+</li>
+<li><p>Titik Data:</p>
+<ul>
+<li><p>Lingkaran ungu → Data asli kelas Iris-setosa.</p></li>
+<li><p>Lingkaran teal → Data asli kelas Iris-versicolor.</p></li>
+<li><p>Lingkaran kuning → Data asli kelas Iris-virginica.</p></li>
+</ul>
+</li>
+<li><p>Decision Boundary:</p>
+<ul>
+<li><p>Lebih kaku, karena semua tetangga memiliki bobot yang sama.</p></li>
+<li><p>Area klasifikasi terlihat lebih seragam.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Plot Kanan (weights=’distance’)</p>
+<ul class="simple">
+<li><p>Warna Latar &amp; Titik Data: Sama seperti plot kiri.</p></li>
+<li><p>Decision Boundary:</p>
+<ul>
+<li><p>Lebih fleksibel, karena tetangga yang lebih dekat memiliki pengaruh lebih besar.</p></li>
+<li><p>Area klasifikasi lebih adaptif terhadap distribusi data.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Perbandingan:</p>
+<ul class="simple">
+<li><p>Uniform: Area klasifikasi lebih kaku dan kurang menyesuaikan dengan pola data.</p></li>
+<li><p>Distance: Area klasifikasi lebih adaptif, mengikuti distribusi data secara lebih alami.</p></li>
+</ul>
+</li>
+</ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
