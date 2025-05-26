@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Tugas1 Data mining &#8212; 23-094 SILVIA RENATA SUWANDI PEN. DATA</title>
+    <title>Tugas 1 Data mining &#8212; 23-094 SILVIA RENATA SUWANDI PEN. DATA</title>
   
   
   
@@ -63,7 +63,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'tugas1_DataMining';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Tugas 2 data_understanding" href="tugas2_DataUnderstanding.html" />
+    <link rel="next" title="Tugas 2 Data Understanding" href="tugas2_DataUnderstanding.html" />
     <link rel="prev" title="SELAMAT DATANG DI MATA KULIAH PENAMBANGAN DATA" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -169,8 +169,24 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Tugas1 Data mining</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tugas2_DataUnderstanding.html"><strong>Tugas 2 data_understanding</strong></a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Tugas 1 Data mining</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="tugas2_DataUnderstanding.html">Tugas 2 Data Understanding</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="LOF.html"><strong>Local Outlier Factor (LOF)</strong></a></li>
+
+
+
+
+
+
+
+
+
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="UTS_PENGEMBANGAN_DATA_B.html">UTS 230411100094 SILVIA RENATA SUWANDI</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="KMeans.html">KLUSTERISASI K-MEANS DENGAN 2, 3, DAN 4 CLUSTER</a></li>
 </ul>
 
     </div>
@@ -353,7 +369,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Tugas1 Data mining</h1>
+    <h1>Tugas 1 Data mining</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -376,8 +392,8 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="tugas1-data-mining">
-<h1>Tugas1 Data mining<a class="headerlink" href="#tugas1-data-mining" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="tugas-1-data-mining">
+<h1>Tugas 1 Data mining<a class="headerlink" href="#tugas-1-data-mining" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">pip</span> install pymysql
@@ -389,7 +405,7 @@
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pymysql in /usr/local/python/3.12.1/lib/python3.12/site-packages (1.1.1)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip is available: <span class=" -Color -Color-Red">24.3.1</span> -&gt; <span class=" -Color -Color-Green">25.0.1</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip is available: <span class=" -Color -Color-Red">24.3.1</span> -&gt; <span class=" -Color -Color-Green">25.1.1</span>
 <span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> To update, run: <span class=" -Color -Color-Green">python3 -m pip install --upgrade pip</span>
 </pre></div>
 </div>
@@ -399,7 +415,7 @@
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: psycopg2 in /usr/local/python/3.12.1/lib/python3.12/site-packages (2.9.10)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip is available: <span class=" -Color -Color-Red">24.3.1</span> -&gt; <span class=" -Color -Color-Green">25.0.1</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip is available: <span class=" -Color -Color-Red">24.3.1</span> -&gt; <span class=" -Color -Color-Green">25.1.1</span>
 <span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> To update, run: <span class=" -Color -Color-Green">python3 -m pip install --upgrade pip</span>
 </pre></div>
 </div>
@@ -457,157 +473,70 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1, &#39;Iris-setosa&#39;, 1.4, 0.2],
- [2, &#39;Iris-setosa&#39;, 14.0, 2.0],
- [3, &#39;Iris-setosa&#39;, 1.3, 0.2],
- [4, &#39;Iris-setosa&#39;, 1.5, 0.2],
- [5, &#39;Iris-setosa&#39;, 1.4, 0.2],
- [6, &#39;Iris-setosa&#39;, 1.7, 0.4],
- [7, &#39;Iris-setosa&#39;, 1.4, 0.3],
- [8, &#39;Iris-setosa&#39;, 1.5, 0.2],
- [9, &#39;Iris-setosa&#39;, 1.4, 0.2],
- [10, &#39;Iris-setosa&#39;, 1.5, 0.1],
- [11, &#39;Iris-setosa&#39;, 1.5, 0.2],
- [12, &#39;Iris-setosa&#39;, 1.6, 0.2],
- [13, &#39;Iris-setosa&#39;, 1.4, 0.1],
- [14, &#39;Iris-setosa&#39;, 1.1, 0.1],
- [15, &#39;Iris-setosa&#39;, 1.2, 0.2],
- [16, &#39;Iris-setosa&#39;, 1.5, 0.4],
- [17, &#39;Iris-setosa&#39;, 1.3, 0.4],
- [18, &#39;Iris-setosa&#39;, 1.4, 0.3],
- [19, &#39;Iris-setosa&#39;, 1.7, 0.3],
- [20, &#39;Iris-setosa&#39;, 1.5, 0.3],
- [21, &#39;Iris-setosa&#39;, 1.7, 0.2],
- [22, &#39;Iris-setosa&#39;, 1.5, 0.4],
- [23, &#39;Iris-setosa&#39;, 1.0, 0.2],
- [24, &#39;Iris-setosa&#39;, 1.7, 0.5],
- [25, &#39;Iris-setosa&#39;, 1.9, 0.2],
- [26, &#39;Iris-setosa&#39;, 1.6, 0.2],
- [27, &#39;Iris-setosa&#39;, 1.6, 0.4],
- [28, &#39;Iris-setosa&#39;, 1.5, 0.2],
- [29, &#39;Iris-setosa&#39;, 1.4, 0.2],
- [30, &#39;Iris-setosa&#39;, 1.6, 0.2],
- [31, &#39;Iris-setosa&#39;, 1.6, 0.2],
- [32, &#39;Iris-setosa&#39;, 1.5, 0.4],
- [33, &#39;Iris-setosa&#39;, 1.5, 0.1],
- [34, &#39;Iris-setosa&#39;, 1.4, 0.2],
- [35, &#39;Iris-setosa&#39;, 1.5, 0.1],
- [36, &#39;Iris-setosa&#39;, 1.2, 0.2],
- [37, &#39;Iris-setosa&#39;, 1.3, 0.2],
- [38, &#39;Iris-setosa&#39;, 1.5, 0.1],
- [39, &#39;Iris-setosa&#39;, 1.3, 0.2],
- [40, &#39;Iris-setosa&#39;, 1.5, 0.2],
- [41, &#39;Iris-setosa&#39;, 1.3, 0.3],
- [42, &#39;Iris-setosa&#39;, 1.3, 0.3],
- [43, &#39;Iris-setosa&#39;, 1.3, 0.2],
- [44, &#39;Iris-setosa&#39;, 1.6, 0.6],
- [45, &#39;Iris-setosa&#39;, 1.9, 0.4],
- [46, &#39;Iris-setosa&#39;, 1.4, 0.3],
- [47, &#39;Iris-setosa&#39;, 1.6, 0.2],
- [48, &#39;Iris-setosa&#39;, 1.4, 0.2],
- [49, &#39;Iris-setosa&#39;, 1.5, 0.2],
- [50, &#39;Iris-setosa&#39;, 1.4, 0.2],
- [51, &#39;Iris-versicolor&#39;, 4.7, 1.4],
- [52, &#39;Iris-versicolor&#39;, 4.5, 1.5],
- [53, &#39;Iris-versicolor&#39;, 4.9, 1.5],
- [54, &#39;Iris-versicolor&#39;, 4.0, 1.3],
- [55, &#39;Iris-versicolor&#39;, 4.6, 1.5],
- [56, &#39;Iris-versicolor&#39;, 4.5, 1.3],
- [57, &#39;Iris-versicolor&#39;, 4.7, 1.6],
- [58, &#39;Iris-versicolor&#39;, 3.3, 1.0],
- [59, &#39;Iris-versicolor&#39;, 4.6, 1.3],
- [60, &#39;Iris-versicolor&#39;, 3.9, 1.4],
- [61, &#39;Iris-versicolor&#39;, 3.5, 1.0],
- [62, &#39;Iris-versicolor&#39;, 4.2, 1.5],
- [63, &#39;Iris-versicolor&#39;, 4.0, 1.0],
- [64, &#39;Iris-versicolor&#39;, 4.7, 1.4],
- [65, &#39;Iris-versicolor&#39;, 3.6, 1.3],
- [66, &#39;Iris-versicolor&#39;, 4.4, 1.4],
- [67, &#39;Iris-versicolor&#39;, 4.5, 1.5],
- [68, &#39;Iris-versicolor&#39;, 4.1, 1.0],
- [69, &#39;Iris-versicolor&#39;, 4.5, 1.5],
- [70, &#39;Iris-versicolor&#39;, 3.9, 1.1],
- [71, &#39;Iris-versicolor&#39;, 4.8, 1.8],
- [72, &#39;Iris-versicolor&#39;, 4.0, 1.3],
- [73, &#39;Iris-versicolor&#39;, 4.9, 1.5],
- [74, &#39;Iris-versicolor&#39;, 4.7, 1.2],
- [75, &#39;Iris-versicolor&#39;, 4.3, 1.3],
- [76, &#39;Iris-versicolor&#39;, 4.4, 1.4],
- [77, &#39;Iris-versicolor&#39;, 4.8, 1.4],
- [78, &#39;Iris-versicolor&#39;, 5.0, 1.7],
- [79, &#39;Iris-versicolor&#39;, 4.5, 1.5],
- [80, &#39;Iris-versicolor&#39;, 3.5, 1.0],
- [81, &#39;Iris-versicolor&#39;, 3.8, 1.1],
- [82, &#39;Iris-versicolor&#39;, 3.7, 1.0],
- [83, &#39;Iris-versicolor&#39;, 3.9, 1.2],
- [84, &#39;Iris-versicolor&#39;, 5.1, 1.6],
- [85, &#39;Iris-versicolor&#39;, 4.5, 1.5],
- [86, &#39;Iris-versicolor&#39;, 4.5, 1.6],
- [87, &#39;Iris-versicolor&#39;, 4.7, 1.5],
- [88, &#39;Iris-versicolor&#39;, 4.4, 1.3],
- [89, &#39;Iris-versicolor&#39;, 4.1, 1.3],
- [90, &#39;Iris-versicolor&#39;, 4.0, 1.3],
- [91, &#39;Iris-versicolor&#39;, 4.4, 1.2],
- [92, &#39;Iris-versicolor&#39;, 4.6, 1.4],
- [93, &#39;Iris-versicolor&#39;, 4.0, 1.2],
- [94, &#39;Iris-versicolor&#39;, 3.3, 1.0],
- [95, &#39;Iris-versicolor&#39;, 4.2, 1.3],
- [96, &#39;Iris-versicolor&#39;, 4.2, 1.2],
- [97, &#39;Iris-versicolor&#39;, 4.2, 1.3],
- [98, &#39;Iris-versicolor&#39;, 4.3, 1.3],
- [99, &#39;Iris-versicolor&#39;, 3.0, 1.1],
- [100, &#39;Iris-versicolor&#39;, 4.1, 1.3],
- [101, &#39;Iris-virginica&#39;, 6.0, 2.5],
- [102, &#39;Iris-virginica&#39;, 5.1, 1.9],
- [103, &#39;Iris-virginica&#39;, 5.9, 2.1],
- [104, &#39;Iris-virginica&#39;, 5.6, 1.8],
- [105, &#39;Iris-virginica&#39;, 5.8, 2.2],
- [106, &#39;Iris-virginica&#39;, 6.6, 2.1],
- [107, &#39;Iris-virginica&#39;, 4.5, 1.7],
- [108, &#39;Iris-virginica&#39;, 6.3, 1.8],
- [109, &#39;Iris-virginica&#39;, 5.8, 1.8],
- [110, &#39;Iris-virginica&#39;, 6.1, 2.5],
- [111, &#39;Iris-virginica&#39;, 5.1, 2.0],
- [112, &#39;Iris-virginica&#39;, 5.3, 1.9],
- [113, &#39;Iris-virginica&#39;, 5.5, 2.1],
- [114, &#39;Iris-virginica&#39;, 5.0, 2.0],
- [115, &#39;Iris-virginica&#39;, 5.1, 2.4],
- [116, &#39;Iris-virginica&#39;, 5.3, 2.3],
- [117, &#39;Iris-virginica&#39;, 5.5, 1.8],
- [118, &#39;Iris-virginica&#39;, 6.7, 2.2],
- [119, &#39;Iris-virginica&#39;, 6.9, 2.3],
- [120, &#39;Iris-virginica&#39;, 5.0, 1.5],
- [121, &#39;Iris-virginica&#39;, 5.7, 2.3],
- [122, &#39;Iris-virginica&#39;, 4.9, 2.0],
- [123, &#39;Iris-virginica&#39;, 6.7, 2.0],
- [124, &#39;Iris-virginica&#39;, 4.9, 1.8],
- [125, &#39;Iris-virginica&#39;, 5.7, 2.1],
- [126, &#39;Iris-virginica&#39;, 6.0, 1.8],
- [127, &#39;Iris-virginica&#39;, 4.8, 1.8],
- [128, &#39;Iris-virginica&#39;, 4.9, 1.8],
- [129, &#39;Iris-virginica&#39;, 5.6, 2.1],
- [130, &#39;Iris-virginica&#39;, 5.8, 1.6],
- [131, &#39;Iris-virginica&#39;, 6.1, 1.9],
- [132, &#39;Iris-virginica&#39;, 6.4, 2.0],
- [133, &#39;Iris-virginica&#39;, 5.6, 2.2],
- [134, &#39;Iris-virginica&#39;, 5.1, 1.5],
- [135, &#39;Iris-virginica&#39;, 5.6, 1.4],
- [136, &#39;Iris-virginica&#39;, 6.1, 2.3],
- [137, &#39;Iris-virginica&#39;, 5.6, 2.4],
- [138, &#39;Iris-virginica&#39;, 5.5, 1.8],
- [139, &#39;Iris-virginica&#39;, 4.8, 1.8],
- [140, &#39;Iris-virginica&#39;, 5.4, 2.1],
- [141, &#39;Iris-virginica&#39;, 5.6, 2.4],
- [142, &#39;Iris-virginica&#39;, 5.1, 2.3],
- [143, &#39;Iris-virginica&#39;, 5.1, 1.9],
- [144, &#39;Iris-virginica&#39;, 5.9, 2.3],
- [145, &#39;Iris-virginica&#39;, 5.7, 2.5],
- [146, &#39;Iris-virginica&#39;, 5.2, 2.3],
- [147, &#39;Iris-virginica&#39;, 5.0, 1.9],
- [148, &#39;Iris-virginica&#39;, 5.2, 2.0],
- [149, &#39;Iris-virginica&#39;, 5.4, 2.3],
- [150, &#39;Iris-virginica&#39;, 5.1, 1.8],
- [151, &#39;???&#39;, 5.1, 3.2]]
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">RuntimeError</span><span class="g g-Whitespace">                              </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">31</span>
+<span class="g g-Whitespace">     </span><span class="mi">26</span>     <span class="k">return</span> <span class="n">data_list</span>
+<span class="g g-Whitespace">     </span><span class="mi">28</span>     <span class="c1"># print(len(data_list))</span>
+<span class="g g-Whitespace">     </span><span class="mi">29</span>     <span class="c1"># print(data_numpy)</span>
+<span class="ne">---&gt; </span><span class="mi">31</span> <span class="n">get_data_mysql</span><span class="p">()</span>
+
+<span class="nn">Cell In[2], line 6,</span> in <span class="ni">get_data_mysql</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="k">def</span> <span class="nf">get_data_mysql</span><span class="p">():</span>
+<span class="ne">----&gt; </span><span class="mi">6</span>     <span class="n">conn</span> <span class="o">=</span> <span class="n">pymysql</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>         <span class="n">host</span><span class="o">=</span><span class="s2">&quot;mysql-397b65f2-posgresqlsilvia.g.aivencloud.com&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>         <span class="n">user</span><span class="o">=</span><span class="s2">&quot;avnadmin&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span>         <span class="n">password</span><span class="o">=</span><span class="s2">&quot;AVNS_TZ0J8yRi7GrNiHAIr19&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span>         <span class="n">database</span><span class="o">=</span><span class="s2">&quot;defaultdb&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span>         <span class="n">port</span><span class="o">=</span><span class="mi">16412</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span>     <span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span>     <span class="n">cursor</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span>     <span class="c1"># cursor.execute(&quot;USE myiris&quot;)  # Use the database</span>
+
+<span class="nn">File /usr/local/python/3.12.1/lib/python3.12/site-packages/pymysql/connections.py:361,</span> in <span class="ni">Connection.__init__</span><span class="nt">(self, user, password, host, database, unix_socket, port, charset, collation, sql_mode, read_default_file, conv, use_unicode, client_flag, cursorclass, init_command, connect_timeout, read_default_group, autocommit, local_infile, max_allowed_packet, defer_connect, auth_plugin_map, read_timeout, write_timeout, bind_address, binary_prefix, program_name, server_public_key, ssl, ssl_ca, ssl_cert, ssl_disabled, ssl_key, ssl_key_password, ssl_verify_cert, ssl_verify_identity, compress, named_pipe, passwd, db)</span>
+<span class="g g-Whitespace">    </span><span class="mi">359</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_sock</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">360</span> <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">361</span>     <span class="bp">self</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
+
+<span class="nn">File /usr/local/python/3.12.1/lib/python3.12/site-packages/pymysql/connections.py:669,</span> in <span class="ni">Connection.connect</span><span class="nt">(self, sock)</span>
+<span class="g g-Whitespace">    </span><span class="mi">666</span> <span class="bp">self</span><span class="o">.</span><span class="n">_next_seq_id</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="g g-Whitespace">    </span><span class="mi">668</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_server_information</span><span class="p">()</span>
+<span class="ne">--&gt; </span><span class="mi">669</span> <span class="bp">self</span><span class="o">.</span><span class="n">_request_authentication</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">671</span> <span class="c1"># Send &quot;SET NAMES&quot; query on init for:</span>
+<span class="g g-Whitespace">    </span><span class="mi">672</span> <span class="c1"># - Ensure charaset (and collation) is set to the server.</span>
+<span class="g g-Whitespace">    </span><span class="mi">673</span> <span class="c1">#   - collation_id in handshake packet may be ignored.</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">682</span> <span class="c1"># - https://github.com/wagtail/wagtail/issues/9477</span>
+<span class="g g-Whitespace">    </span><span class="mi">683</span> <span class="c1"># - https://zenn.dev/methane/articles/2023-mysql-collation (Japanese)</span>
+<span class="g g-Whitespace">    </span><span class="mi">684</span> <span class="bp">self</span><span class="o">.</span><span class="n">set_character_set</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">charset</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">collation</span><span class="p">)</span>
+
+<span class="nn">File /usr/local/python/3.12.1/lib/python3.12/site-packages/pymysql/connections.py:979,</span> in <span class="ni">Connection._request_authentication</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">977</span> <span class="c1"># https://dev.mysql.com/doc/internals/en/successful-authentication.html</span>
+<span class="g g-Whitespace">    </span><span class="mi">978</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_auth_plugin_name</span> <span class="o">==</span> <span class="s2">&quot;caching_sha2_password&quot;</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">979</span>     <span class="n">auth_packet</span> <span class="o">=</span> <span class="n">_auth</span><span class="o">.</span><span class="n">caching_sha2_password_auth</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">auth_packet</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">980</span> <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_auth_plugin_name</span> <span class="o">==</span> <span class="s2">&quot;sha256_password&quot;</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">981</span>     <span class="n">auth_packet</span> <span class="o">=</span> <span class="n">_auth</span><span class="o">.</span><span class="n">sha256_password_auth</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">auth_packet</span><span class="p">)</span>
+
+<span class="nn">File /usr/local/python/3.12.1/lib/python3.12/site-packages/pymysql/_auth.py:267,</span> in <span class="ni">caching_sha2_password_auth</span><span class="nt">(conn, pkt)</span>
+<span class="g g-Whitespace">    </span><span class="mi">264</span>     <span class="k">if</span> <span class="n">DEBUG</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">265</span>         <span class="nb">print</span><span class="p">(</span><span class="n">conn</span><span class="o">.</span><span class="n">server_public_key</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;ascii&quot;</span><span class="p">))</span>
+<span class="ne">--&gt; </span><span class="mi">267</span> <span class="n">data</span> <span class="o">=</span> <span class="n">sha2_rsa_encrypt</span><span class="p">(</span><span class="n">conn</span><span class="o">.</span><span class="n">password</span><span class="p">,</span> <span class="n">conn</span><span class="o">.</span><span class="n">salt</span><span class="p">,</span> <span class="n">conn</span><span class="o">.</span><span class="n">server_public_key</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">268</span> <span class="n">pkt</span> <span class="o">=</span> <span class="n">_roundtrip</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+
+<span class="nn">File /usr/local/python/3.12.1/lib/python3.12/site-packages/pymysql/_auth.py:144,</span> in <span class="ni">sha2_rsa_encrypt</span><span class="nt">(password, salt, public_key)</span>
+<span class="g g-Whitespace">    </span><span class="mi">139</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;Encrypt password with salt and public_key.</span>
+<span class="g g-Whitespace">    </span><span class="mi">140</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">141</span><span class="sd"> Used for sha256_password and caching_sha2_password.</span>
+<span class="g g-Whitespace">    </span><span class="mi">142</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">143</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">_have_cryptography</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">144</span>     <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">145</span>         <span class="s2">&quot;&#39;cryptography&#39; package is required for sha256_password or&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">146</span>         <span class="o">+</span> <span class="s2">&quot; caching_sha2_password auth methods&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">147</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">148</span> <span class="n">message</span> <span class="o">=</span> <span class="n">_xor_password</span><span class="p">(</span><span class="n">password</span> <span class="o">+</span> <span class="sa">b</span><span class="s2">&quot;</span><span class="se">\0</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">salt</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">149</span> <span class="n">rsa_key</span> <span class="o">=</span> <span class="n">serialization</span><span class="o">.</span><span class="n">load_pem_public_key</span><span class="p">(</span><span class="n">public_key</span><span class="p">,</span> <span class="n">default_backend</span><span class="p">())</span>
+
+<span class="ne">RuntimeError</span>: &#39;cryptography&#39; package is required for sha256_password or caching_sha2_password auth methods
 </pre></div>
 </div>
 </div>
@@ -647,6 +576,7 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1, &#39;Iris-setosa&#39;, 5.1, 3.5],
+ [2, &#39;Iris-setosa&#39;, 4.9, 3.0],
  [3, &#39;Iris-setosa&#39;, 4.7, 3.2],
  [4, &#39;Iris-setosa&#39;, 4.6, 3.1],
  [5, &#39;Iris-setosa&#39;, 5.0, 3.6],
@@ -794,9 +724,7 @@
  [147, &#39;Iris-virginica&#39;, 6.3, 2.5],
  [148, &#39;Iris-virginica&#39;, 6.5, 3.0],
  [149, &#39;Iris-virginica&#39;, 6.2, 3.4],
- [150, &#39;Iris-virginica&#39;, 5.9, 3.0],
- [151, &#39;???&#39;, 5.8, 1.0],
- [2, &#39;Iris-setosa&#39;, 40.9, 30.0]]
+ [150, &#39;Iris-virginica&#39;, 5.9, 3.0]]
 </pre></div>
 </div>
 </div>
@@ -857,7 +785,7 @@
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> id           class  petal_length  petal_width  sepal_length  sepal_width
   1     Iris-setosa           1.4          0.2           5.1          3.5
-  2     Iris-setosa          14.0          2.0          40.9         30.0
+  2     Iris-setosa           1.4          0.2           4.9          3.0
   3     Iris-setosa           1.3          0.2           4.7          3.2
   4     Iris-setosa           1.5          0.2           4.6          3.1
   5     Iris-setosa           1.4          0.2           5.0          3.6
@@ -1006,7 +934,6 @@
 148  Iris-virginica           5.2          2.0           6.5          3.0
 149  Iris-virginica           5.4          2.3           6.2          3.4
 150  Iris-virginica           5.1          1.8           5.9          3.0
-151             ???           5.1          3.2           5.8          1.0
 </pre></div>
 </div>
 </div>
@@ -1076,7 +1003,7 @@
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> id           class  petal_length  petal_width  sepal_length  sepal_width
   1     Iris-setosa           1.4          0.2           5.1          3.5
-  2     Iris-setosa          14.0          2.0          40.9         30.0
+  2     Iris-setosa           1.4          0.2           4.9          3.0
   3     Iris-setosa           1.3          0.2           4.7          3.2
   4     Iris-setosa           1.5          0.2           4.6          3.1
   5     Iris-setosa           1.4          0.2           5.0          3.6
@@ -1225,10 +1152,9 @@
 148  Iris-virginica           5.2          2.0           6.5          3.0
 149  Iris-virginica           5.4          2.3           6.2          3.4
 150  Iris-virginica           5.1          1.8           5.9          3.0
-151             ???           5.1          3.2           5.8          1.0
 </pre></div>
 </div>
-<img alt="_images/f772dbbe30f2904c1e316c754692f8ca091c1c60590ad16df616539c4444ded9.png" src="_images/f772dbbe30f2904c1e316c754692f8ca091c1c60590ad16df616539c4444ded9.png" />
+<img alt="_images/5f2336eb1bd178df40e4f06ae1b0c750f8f7e6ded7413878dcb658f4f15f9191.png" src="_images/5f2336eb1bd178df40e4f06ae1b0c750f8f7e6ded7413878dcb658f4f15f9191.png" />
 </div>
 </div>
 <p>Hasil dari kode ini adalah:</p>
@@ -1309,7 +1235,7 @@
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> id           class  petal_length  petal_width  sepal_length  sepal_width
   1     Iris-setosa           1.4          0.2           5.1          3.5
-  2     Iris-setosa          14.0          2.0          40.9         30.0
+  2     Iris-setosa           1.4          0.2           4.9          3.0
   3     Iris-setosa           1.3          0.2           4.7          3.2
   4     Iris-setosa           1.5          0.2           4.6          3.1
   5     Iris-setosa           1.4          0.2           5.0          3.6
@@ -1458,14 +1384,12 @@
 148  Iris-virginica           5.2          2.0           6.5          3.0
 149  Iris-virginica           5.4          2.3           6.2          3.4
 150  Iris-virginica           5.1          1.8           5.9          3.0
-151             ???           5.1          3.2           5.8          1.0
 </pre></div>
 </div>
-<img alt="_images/f772dbbe30f2904c1e316c754692f8ca091c1c60590ad16df616539c4444ded9.png" src="_images/f772dbbe30f2904c1e316c754692f8ca091c1c60590ad16df616539c4444ded9.png" />
-<img alt="_images/899a13597804aff52c0efc4a81d88a7797e2cb0481b6181157ea62d22f9effe8.png" src="_images/899a13597804aff52c0efc4a81d88a7797e2cb0481b6181157ea62d22f9effe8.png" />
-<img alt="_images/ed653ffaaa71d405989dd3e9fa89bacd15776371b92814b3a99908dcc9014bcf.png" src="_images/ed653ffaaa71d405989dd3e9fa89bacd15776371b92814b3a99908dcc9014bcf.png" />
-<img alt="_images/0533419549cf6afb7d484d0eeda55bc70ce6143e0d59559185e0ad67acc1791a.png" src="_images/0533419549cf6afb7d484d0eeda55bc70ce6143e0d59559185e0ad67acc1791a.png" />
-<img alt="_images/6bed4e1bbc94903a9cba8ae85c4b4fb51e7d70953f8f5617059362113332e6a4.png" src="_images/6bed4e1bbc94903a9cba8ae85c4b4fb51e7d70953f8f5617059362113332e6a4.png" />
+<img alt="_images/5f2336eb1bd178df40e4f06ae1b0c750f8f7e6ded7413878dcb658f4f15f9191.png" src="_images/5f2336eb1bd178df40e4f06ae1b0c750f8f7e6ded7413878dcb658f4f15f9191.png" />
+<img alt="_images/1baf07c72c8e7acdbccf68558d3aa00d3608ac83c4541d829769e372afd03a81.png" src="_images/1baf07c72c8e7acdbccf68558d3aa00d3608ac83c4541d829769e372afd03a81.png" />
+<img alt="_images/11c49b6f50f5575b34a8c051bfa4e3a73a47c8d52489ada473c269179cd3f406.png" src="_images/11c49b6f50f5575b34a8c051bfa4e3a73a47c8d52489ada473c269179cd3f406.png" />
+<img alt="_images/0dceb5f1b04eb240952a78679e3b8f25a538500d6ea6f0d102bd88a0a73e381b.png" src="_images/0dceb5f1b04eb240952a78679e3b8f25a538500d6ea6f0d102bd88a0a73e381b.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1553,7 +1477,7 @@
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> id           class  petal_length  petal_width  sepal_length  sepal_width
   1     Iris-setosa           1.4          0.2           5.1          3.5
-  2     Iris-setosa          14.0          2.0          40.9         30.0
+  2     Iris-setosa           1.4          0.2           4.9          3.0
   3     Iris-setosa           1.3          0.2           4.7          3.2
   4     Iris-setosa           1.5          0.2           4.6          3.1
   5     Iris-setosa           1.4          0.2           5.0          3.6
@@ -1702,12 +1626,11 @@
 148  Iris-virginica           5.2          2.0           6.5          3.0
 149  Iris-virginica           5.4          2.3           6.2          3.4
 150  Iris-virginica           5.1          1.8           5.9          3.0
-151             ???           5.1          3.2           5.8          1.0
 </pre></div>
 </div>
-<img alt="_images/f772dbbe30f2904c1e316c754692f8ca091c1c60590ad16df616539c4444ded9.png" src="_images/f772dbbe30f2904c1e316c754692f8ca091c1c60590ad16df616539c4444ded9.png" />
-<img alt="_images/5fb0c5fb29b335a745cc82462e77026db336b2adae8ae6d92991ab5725e4a1a9.png" src="_images/5fb0c5fb29b335a745cc82462e77026db336b2adae8ae6d92991ab5725e4a1a9.png" />
-<img alt="_images/50d1e5d022c9b72f302c3aa03a6239793122c8f97a5b0d06399f72f2adec6213.png" src="_images/50d1e5d022c9b72f302c3aa03a6239793122c8f97a5b0d06399f72f2adec6213.png" />
+<img alt="_images/5f2336eb1bd178df40e4f06ae1b0c750f8f7e6ded7413878dcb658f4f15f9191.png" src="_images/5f2336eb1bd178df40e4f06ae1b0c750f8f7e6ded7413878dcb658f4f15f9191.png" />
+<img alt="_images/78123bd32be350c922b1785190a80ca3aba9bc3e381daeac543a727fe90232a0.png" src="_images/78123bd32be350c922b1785190a80ca3aba9bc3e381daeac543a727fe90232a0.png" />
+<img alt="_images/732f6aa05ddde935128b5a72fd4078bb5b386a887a6c7e1e279f8fb09025e043.png" src="_images/732f6aa05ddde935128b5a72fd4078bb5b386a887a6c7e1e279f8fb09025e043.png" />
 </div>
 </div>
 <p>Hasil dari kode ini adalah:</p>
@@ -1761,7 +1684,7 @@
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><strong>Tugas 2 data_understanding</strong></p>
+        <p class="prev-next-title">Tugas 2 Data Understanding</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
