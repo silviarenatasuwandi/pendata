@@ -395,29 +395,22 @@
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-manual-perhitungan-fuzzy-c-means-clustering"><strong>Contoh Manual Perhitungan Fuzzy C-Means Clustering</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-dan-parameter"><strong>Data dan Parameter</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1-inisialisasi-matriks-keanggotaan-u-0"><strong>Langkah 1: Inisialisasi Matriks Keanggotaan <span class="math notranslate nohighlight">\(U^{(0)}\)</span></strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-hitung-pusat-cluster-centroid-v-j"><strong>Langkah 2: Hitung Pusat Cluster (Centroid) <span class="math notranslate nohighlight">\(v_j\)</span></strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hitung-v-1">Hitung <span class="math notranslate nohighlight">\(v_1\)</span>:</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hitung-v-2">Hitung <span class="math notranslate nohighlight">\(v_2\)</span>:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data"><strong>Data:</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jumlah-cluster-c-2"><strong>Jumlah Cluster (c):</strong> 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tingkat-fuzziness-m-2"><strong>Tingkat Fuzziness (m):</strong> 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kriteria-konvergensi-perbedaan-pusat-cluster-0-01"><strong>Kriteria Konvergensi:</strong> perbedaan pusat cluster &lt; 0.01</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-update-matriks-keanggotaan-u"><strong>Langkah 3: Update Matriks Keanggotaan <span class="math notranslate nohighlight">\(U\)</span></strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-hitung-untuk-data-x-1-1">Contoh hitung untuk data <span class="math notranslate nohighlight">\(x_1 = 1\)</span>:</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hitung-untuk-x-2-2">Hitung untuk <span class="math notranslate nohighlight">\(x_2 = 2\)</span>:</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hitung-untuk-x-3-5">Hitung untuk <span class="math notranslate nohighlight">\(x_3 = 5\)</span>:</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hitung-untuk-x-4-6">Hitung untuk <span class="math notranslate nohighlight">\(x_4 = 6\)</span>:</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-keanggotaan-baru-u-1">Matriks keanggotaan baru <span class="math notranslate nohighlight">\(U^{(1)}\)</span>:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4-cek-konvergensi"><strong>Langkah 4: Cek Konvergensi</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hitung-centroid-baru-v-1-1">Hitung Centroid Baru <span class="math notranslate nohighlight">\(v_1^{(1)}\)</span>:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hitung-centroid-baru-v-2-1">Hitung Centroid Baru <span class="math notranslate nohighlight">\(v_2^{(1)}\)</span>:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-5-hitung-fungsi-objektif-j-m"><strong>Langkah 5: Hitung Fungsi Objektif <span class="math notranslate nohighlight">\(J_m\)</span></strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ringkasan-iterasi-dan-hasil">Ringkasan Iterasi dan Hasil</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretasi-akhir">Interpretasi Akhir</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1-inisialisasi-matriks-keanggotaan-u"><strong>Langkah 1: Inisialisasi Matriks Keanggotaan <span class="math notranslate nohighlight">\(U\)</span></strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-hitung-pusat-cluster-centroid"><strong>Langkah 2: Hitung Pusat Cluster (Centroid)</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-update-matriks-keanggotaan-u"><strong>Langkah 3: Update Matriks Keanggotaan <span class="math notranslate nohighlight">\(U\)</span></strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4-cek-konvergensi"><strong>Langkah 4: Cek Konvergensi</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-iterasi-2-hitung-centroid-baru"><strong>Langkah 2 Iterasi 2: Hitung Centroid Baru</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-iterasi-2-update-matriks-keanggotaan-u"><strong>Langkah 3 Iterasi 2: Update Matriks Keanggotaan <span class="math notranslate nohighlight">\(U\)</span></strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4-iterasi-2-cek-konvergensi"><strong>Langkah 4 Iterasi 2: Cek Konvergensi</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fungsi-objektif-j-m-iterasi-1"><strong>Fungsi Objektif <span class="math notranslate nohighlight">\(J_m\)</span> (Iterasi 1)</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ringkasan-iterasi-2-iterasi-pertama-saja-untuk-ilustrasi"><strong>Ringkasan iterasi (2 iterasi pertama saja untuk ilustrasi)</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretasi-sementara"><strong>Interpretasi Sementara</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-python"><strong>Implementasi Python</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-fuzzy-c-means-untuk-data-iris-3-cluster"><strong>Implementasi Fuzzy C-Means Untuk Data Iris (3 Cluster)</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lakukan-pengambilan-dan-penggabungan-data-dari-database-serta-pemisahan-outlier"><strong>Lakukan Pengambilan dan Penggabungan Data dari Database, Serta Pemisahan Outlier</strong></a></li>
@@ -546,202 +539,374 @@ u_{ij} = \frac{1}{\sum_{k=1}^{c} \left( \frac{\|x_i - c_j\|}{\|x_i - c_k\|} \rig
 <hr class="docutils" />
 <section id="contoh-manual-perhitungan-fuzzy-c-means-clustering">
 <h2><strong>Contoh Manual Perhitungan Fuzzy C-Means Clustering</strong><a class="headerlink" href="#contoh-manual-perhitungan-fuzzy-c-means-clustering" title="Link to this heading">#</a></h2>
-<section id="data-dan-parameter">
-<h3><strong>Data dan Parameter</strong><a class="headerlink" href="#data-dan-parameter" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Data satu dimensi:
-<span class="math notranslate nohighlight">\(X = \{1, 2, 5, 6\}\)</span></p></li>
-<li><p>Jumlah cluster: <span class="math notranslate nohighlight">\(c = 2\)</span></p></li>
-<li><p>Tingkat fuzziness: <span class="math notranslate nohighlight">\(m = 2\)</span></p></li>
-<li><p>Kriteria konvergensi: perubahan centroid &lt; 0.01</p></li>
-</ul>
+<p>Misalkan data dan parameter:</p>
+<section id="data">
+<h3><strong>Data:</strong><a class="headerlink" href="#data" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[
+X = \{1, 2, 5, 6\}
+\]</div>
+</section>
+<section id="jumlah-cluster-c-2">
+<h3><strong>Jumlah Cluster (c):</strong> 2<a class="headerlink" href="#jumlah-cluster-c-2" title="Link to this heading">#</a></h3>
+</section>
+<section id="tingkat-fuzziness-m-2">
+<h3><strong>Tingkat Fuzziness (m):</strong> 2<a class="headerlink" href="#tingkat-fuzziness-m-2" title="Link to this heading">#</a></h3>
+</section>
+<section id="kriteria-konvergensi-perbedaan-pusat-cluster-0-01">
+<h3><strong>Kriteria Konvergensi:</strong> perbedaan pusat cluster &lt; 0.01<a class="headerlink" href="#kriteria-konvergensi-perbedaan-pusat-cluster-0-01" title="Link to this heading">#</a></h3>
+</section>
 </section>
 <hr class="docutils" />
-<section id="langkah-1-inisialisasi-matriks-keanggotaan-u-0">
-<h3><strong>Langkah 1: Inisialisasi Matriks Keanggotaan <span class="math notranslate nohighlight">\(U^{(0)}\)</span></strong><a class="headerlink" href="#langkah-1-inisialisasi-matriks-keanggotaan-u-0" title="Link to this heading">#</a></h3>
+<section id="langkah-1-inisialisasi-matriks-keanggotaan-u">
+<h2><strong>Langkah 1: Inisialisasi Matriks Keanggotaan <span class="math notranslate nohighlight">\(U\)</span></strong><a class="headerlink" href="#langkah-1-inisialisasi-matriks-keanggotaan-u" title="Link to this heading">#</a></h2>
 <p>Ukuran matriks: <span class="math notranslate nohighlight">\(2 \times 4\)</span></p>
-<p>Misalkan:</p>
+<p>Misalkan mulai dengan matriks:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 U^{(0)} =
 \begin{bmatrix}
-0.6 &amp; 0.4 &amp; 0.9 &amp; 0.1 \\
-0.4 &amp; 0.6 &amp; 0.1 &amp; 0.9
+0.3 &amp; 0.2 &amp; 0.4 &amp; 0.1 \\
+0.7 &amp; 0.8 &amp; 0.6 &amp; 0.9 \\
 \end{bmatrix}
 \end{split}\]</div>
-<p>Catatan: Setiap kolom jumlahnya 1, misal <span class="math notranslate nohighlight">\(0.6 + 0.4 = 1\)</span>.</p>
+<p>Sudah memenuhi syarat jumlah keanggotaan tiap data = 1.</p>
 </section>
 <hr class="docutils" />
-<section id="langkah-2-hitung-pusat-cluster-centroid-v-j">
-<h3><strong>Langkah 2: Hitung Pusat Cluster (Centroid) <span class="math notranslate nohighlight">\(v_j\)</span></strong><a class="headerlink" href="#langkah-2-hitung-pusat-cluster-centroid-v-j" title="Link to this heading">#</a></h3>
-<p>Rumus centroid cluster ke-<span class="math notranslate nohighlight">\(j\)</span>:</p>
+<section id="langkah-2-hitung-pusat-cluster-centroid">
+<h2><strong>Langkah 2: Hitung Pusat Cluster (Centroid)</strong><a class="headerlink" href="#langkah-2-hitung-pusat-cluster-centroid" title="Link to this heading">#</a></h2>
+<p>Rumus:</p>
 <div class="math notranslate nohighlight">
 \[
-v_j = \frac{\sum_{i=1}^n (u_{ji})^m \cdot x_i}{\sum_{i=1}^n (u_{ji})^m}
+v_j = \frac{\sum_{i=1}^n u_{ji}^m \cdot x_i}{\sum_{i=1}^n u_{ji}^m}
 \]</div>
-<hr class="docutils" />
-<section id="hitung-v-1">
-<h4>Hitung <span class="math notranslate nohighlight">\(v_1\)</span>:<a class="headerlink" href="#hitung-v-1" title="Link to this heading">#</a></h4>
+<p>Hitung untuk cluster 1:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{aligned}
-v_1 &amp;= \frac{(0.6)^2 \times 1 + (0.4)^2 \times 2 + (0.9)^2 \times 5 + (0.1)^2 \times 6}{(0.6)^2 + (0.4)^2 + (0.9)^2 + (0.1)^2} \\
-&amp;= \frac{0.36 \times 1 + 0.16 \times 2 + 0.81 \times 5 + 0.01 \times 6}{0.36 + 0.16 + 0.81 + 0.01} \\
-&amp;= \frac{0.36 + 0.32 + 4.05 + 0.06}{1.34} \\
-&amp;= \frac{4.79}{1.34} \approx 3.574
+v_1 &amp;= \frac{0.3^2 \times 1 + 0.2^2 \times 2 + 0.4^2 \times 5 + 0.1^2 \times 6}{0.3^2 + 0.2^2 + 0.4^2 + 0.1^2} \\
+&amp;= \frac{0.09 \times 1 + 0.04 \times 2 + 0.16 \times 5 + 0.01 \times 6}{0.09 + 0.04 + 0.16 + 0.01} \\
+&amp;= \frac{0.09 + 0.08 + 0.8 + 0.06}{0.3} \\
+&amp;= \frac{1.03}{0.3} \\
+&amp;\approx 3.433
 \end{aligned}
 \end{split}\]</div>
-</section>
-<hr class="docutils" />
-<section id="hitung-v-2">
-<h4>Hitung <span class="math notranslate nohighlight">\(v_2\)</span>:<a class="headerlink" href="#hitung-v-2" title="Link to this heading">#</a></h4>
+<p>Hitung untuk cluster 2:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{aligned}
-v_2 &amp;= \frac{(0.4)^2 \times 1 + (0.6)^2 \times 2 + (0.1)^2 \times 5 + (0.9)^2 \times 6}{(0.4)^2 + (0.6)^2 + (0.1)^2 + (0.9)^2} \\
-&amp;= \frac{0.16 \times 1 + 0.36 \times 2 + 0.01 \times 5 + 0.81 \times 6}{0.16 + 0.36 + 0.01 + 0.81} \\
-&amp;= \frac{0.16 + 0.72 + 0.05 + 4.86}{1.34} \\
-&amp;= \frac{5.79}{1.34} \approx 4.321
+v_2 &amp;= \frac{0.7^2 \times 1 + 0.8^2 \times 2 + 0.6^2 \times 5 + 0.9^2 \times 6}{0.7^2 + 0.8^2 + 0.6^2 + 0.9^2} \\
+&amp;= \frac{0.49 \times 1 + 0.64 \times 2 + 0.36 \times 5 + 0.81 \times 6}{0.49 + 0.64 + 0.36 + 0.81} \\
+&amp;= \frac{0.49 + 1.28 + 1.8 + 4.86}{2.3} \\
+&amp;= \frac{8.43}{2.3} \\
+&amp;\approx 3.667
 \end{aligned}
 \end{split}\]</div>
-</section>
 </section>
 <hr class="docutils" />
 <section id="langkah-3-update-matriks-keanggotaan-u">
-<h3><strong>Langkah 3: Update Matriks Keanggotaan <span class="math notranslate nohighlight">\(U\)</span></strong><a class="headerlink" href="#langkah-3-update-matriks-keanggotaan-u" title="Link to this heading">#</a></h3>
-<p>Rumus update <span class="math notranslate nohighlight">\(u_{ji}\)</span>:</p>
+<h2><strong>Langkah 3: Update Matriks Keanggotaan <span class="math notranslate nohighlight">\(U\)</span></strong><a class="headerlink" href="#langkah-3-update-matriks-keanggotaan-u" title="Link to this heading">#</a></h2>
+<p>Rumus:</p>
 <div class="math notranslate nohighlight">
 \[
-u_{ji} = \frac{1}{\sum_{k=1}^c \left( \frac{d(x_i, v_j)}{d(x_i, v_k)} \right)^{\frac{2}{m-1}}}
+u_{ji} = \frac{1}{\sum_{k=1}^c \left(\frac{d(x_i, v_j)}{d(x_i, v_k)}\right)^{\frac{2}{m-1}}}
 \]</div>
-<p>dengan <span class="math notranslate nohighlight">\(d(x_i, v_j) = |x_i - v_j|\)</span></p>
+<p>Hitung jarak untuk tiap data dan centroid:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Data <span class="math notranslate nohighlight">\(x_i\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(d(x_i, v_1)\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(d(x_i, v_2)\)</span></p></th>
+<th class="head"><p></p></th>
+<th class="head"><p></p></th>
+<th class="head"><p></p></th>
+<th class="head"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>(</p></td>
+<td><p>1 - 3.433</p></td>
+<td><p>= 2.433)</p></td>
+<td><p>(</p></td>
+<td><p>1 - 3.667</p></td>
+<td><p>= 2.667)</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>(</p></td>
+<td><p>2 - 3.433</p></td>
+<td><p>= 1.433)</p></td>
+<td><p>(</p></td>
+<td><p>2 - 3.667</p></td>
+<td><p>= 1.667)</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>(</p></td>
+<td><p>5 - 3.433</p></td>
+<td><p>= 1.567)</p></td>
+<td><p>(</p></td>
+<td><p>5 - 3.667</p></td>
+<td><p>= 1.333)</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>(</p></td>
+<td><p>6 - 3.433</p></td>
+<td><p>= 2.567)</p></td>
+<td><p>(</p></td>
+<td><p>6 - 3.667</p></td>
+<td><p>= 2.333)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Contoh update untuk data <span class="math notranslate nohighlight">\(x_1 = 1\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+u_{1,1} = \frac{1}{\left(\frac{2.433}{2.433}\right)^2 + \left(\frac{2.433}{2.667}\right)^2}
+= \frac{1}{1 + (0.912)^2} = \frac{1}{1 + 0.831} = \frac{1}{1.831} \approx 0.546
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+u_{2,1} = 1 - u_{1,1} = 0.454
+\]</div>
+<p>Ulangi proses ini untuk seluruh data:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Data</p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(u_{1,i}\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(u_{2,i}\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>0.546</p></td>
+<td><p>0.454</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{1}{1 + (1.433/1.667)^2} = \frac{1}{1 + 0.739^2} = \frac{1}{1 + 0.546} = 0.647\)</span></p></td>
+<td><p>0.353</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{1}{1 + (1.567/1.333)^2} = \frac{1}{1 + 1.175^2} = \frac{1}{1 + 1.381} = 0.420\)</span></p></td>
+<td><p>0.580</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{1}{1 + (2.567/2.333)^2} = \frac{1}{1 + 1.101^2} = \frac{1}{1 + 1.213} = 0.452\)</span></p></td>
+<td><p>0.548</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
 <hr class="docutils" />
-<section id="contoh-hitung-untuk-data-x-1-1">
-<h4>Contoh hitung untuk data <span class="math notranslate nohighlight">\(x_1 = 1\)</span>:<a class="headerlink" href="#contoh-hitung-untuk-data-x-1-1" title="Link to this heading">#</a></h4>
+<section id="langkah-4-cek-konvergensi">
+<h2><strong>Langkah 4: Cek Konvergensi</strong><a class="headerlink" href="#langkah-4-cek-konvergensi" title="Link to this heading">#</a></h2>
+<p>Hitung perubahan centroid dari iterasi sebelumnya (kita hanya ada 1 iterasi):</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(d(x_1, v_1) = |1 - 3.574| = 2.574\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(d(x_1, v_2) = |1 - 4.321| = 3.321\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(v_1^{(0)} =\)</span> (tidak ada, inisialisasi dari <span class="math notranslate nohighlight">\(U^{(0)}\)</span>)</p></li>
+<li><p><span class="math notranslate nohighlight">\(v_1^{(1)} = 3.433\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(v_2^{(1)} = 3.667\)</span></p></li>
 </ul>
-<p>Hitung <span class="math notranslate nohighlight">\(u_{1,1}\)</span>:</p>
-<div class="math notranslate nohighlight">
-\[
-u_{1,1} = \frac{1}{\left(\frac{2.574}{2.574}\right)^2 + \left(\frac{2.574}{3.321}\right)^2} = \frac{1}{1 + (0.775)^2} = \frac{1}{1 + 0.6006} = \frac{1}{1.6006} = 0.625
-\]</div>
-<p>Maka <span class="math notranslate nohighlight">\(u_{2,1} = 1 - 0.625 = 0.375\)</span>.</p>
-</section>
-<hr class="docutils" />
-<section id="hitung-untuk-x-2-2">
-<h4>Hitung untuk <span class="math notranslate nohighlight">\(x_2 = 2\)</span>:<a class="headerlink" href="#hitung-untuk-x-2-2" title="Link to this heading">#</a></h4>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(d(x_2, v_1) = |2 - 3.574| = 1.574\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(d(x_2, v_2) = |2 - 4.321| = 2.321\)</span></p></li>
-</ul>
-<div class="math notranslate nohighlight">
-\[
-u_{1,2} = \frac{1}{1 + \left(\frac{1.574}{2.321}\right)^2} = \frac{1}{1 + (0.678)^2} = \frac{1}{1 + 0.460} = \frac{1}{1.460} = 0.685
-\]</div>
-<p>Maka <span class="math notranslate nohighlight">\(u_{2,2} = 0.315\)</span>.</p>
-</section>
-<hr class="docutils" />
-<section id="hitung-untuk-x-3-5">
-<h4>Hitung untuk <span class="math notranslate nohighlight">\(x_3 = 5\)</span>:<a class="headerlink" href="#hitung-untuk-x-3-5" title="Link to this heading">#</a></h4>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(d(x_3, v_1) = |5 - 3.574| = 1.426\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(d(x_3, v_2) = |5 - 4.321| = 0.679\)</span></p></li>
-</ul>
-<div class="math notranslate nohighlight">
-\[
-u_{1,3} = \frac{1}{1 + \left(\frac{1.426}{0.679}\right)^2} = \frac{1}{1 + (2.101)^2} = \frac{1}{1 + 4.414} = \frac{1}{5.414} = 0.185
-\]</div>
-<p>Maka <span class="math notranslate nohighlight">\(u_{2,3} = 0.815\)</span>.</p>
-</section>
-<hr class="docutils" />
-<section id="hitung-untuk-x-4-6">
-<h4>Hitung untuk <span class="math notranslate nohighlight">\(x_4 = 6\)</span>:<a class="headerlink" href="#hitung-untuk-x-4-6" title="Link to this heading">#</a></h4>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(d(x_4, v_1) = |6 - 3.574| = 2.426\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(d(x_4, v_2) = |6 - 4.321| = 1.679\)</span></p></li>
-</ul>
-<div class="math notranslate nohighlight">
-\[
-u_{1,4} = \frac{1}{1 + \left(\frac{2.426}{1.679}\right)^2} = \frac{1}{1 + (1.445)^2} = \frac{1}{1 + 2.088} = \frac{1}{3.088} = 0.324
-\]</div>
-<p>Maka <span class="math notranslate nohighlight">\(u_{2,4} = 0.676\)</span>.</p>
-</section>
-</section>
-<hr class="docutils" />
-<section id="matriks-keanggotaan-baru-u-1">
-<h3>Matriks keanggotaan baru <span class="math notranslate nohighlight">\(U^{(1)}\)</span>:<a class="headerlink" href="#matriks-keanggotaan-baru-u-1" title="Link to this heading">#</a></h3>
+<p>Karena belum ada iterasi sebelumnya, lanjutkan iterasi 2 dengan <span class="math notranslate nohighlight">\(U^{(1)}\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 U^{(1)} =
 \begin{bmatrix}
-0.625 &amp; 0.685 &amp; 0.185 &amp; 0.324 \\
-0.375 &amp; 0.315 &amp; 0.815 &amp; 0.676
+0.546 &amp; 0.647 &amp; 0.420 &amp; 0.452 \\
+0.454 &amp; 0.353 &amp; 0.580 &amp; 0.548 \\
 \end{bmatrix}
 \end{split}\]</div>
 </section>
 <hr class="docutils" />
-<section id="langkah-4-cek-konvergensi">
-<h3><strong>Langkah 4: Cek Konvergensi</strong><a class="headerlink" href="#langkah-4-cek-konvergensi" title="Link to this heading">#</a></h3>
-<p>Hitung centroid baru <span class="math notranslate nohighlight">\(v_j^{(1)}\)</span> dan bandingkan dengan <span class="math notranslate nohighlight">\(v_j^{(0)}\)</span>. Jika perubahan &lt; 0.01, berhenti. Jika tidak, ulangi.</p>
-</section>
-<hr class="docutils" />
-<section id="hitung-centroid-baru-v-1-1">
-<h3>Hitung Centroid Baru <span class="math notranslate nohighlight">\(v_1^{(1)}\)</span>:<a class="headerlink" href="#hitung-centroid-baru-v-1-1" title="Link to this heading">#</a></h3>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{aligned}
-v_1^{(1)} &amp;= \frac{0.625^2 \times 1 + 0.685^2 \times 2 + 0.185^2 \times 5 + 0.324^2 \times 6}{0.625^2 + 0.685^2 + 0.185^2 + 0.324^2} \\
-&amp;= \frac{0.3906 \times 1 + 0.4692 \times 2 + 0.0342 \times 5 + 0.1049 \times 6}{0.3906 + 0.4692 + 0.0342 + 0.1049} \\
-&amp;= \frac{0.3906 + 0.9384 + 0.171 + 0.6294}{0.999} \\
-&amp;= \frac{2.1294}{0.999} \approx 2.132
-\end{aligned}
-\end{split}\]</div>
-</section>
-<hr class="docutils" />
-<section id="hitung-centroid-baru-v-2-1">
-<h3>Hitung Centroid Baru <span class="math notranslate nohighlight">\(v_2^{(1)}\)</span>:<a class="headerlink" href="#hitung-centroid-baru-v-2-1" title="Link to this heading">#</a></h3>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{aligned}
-v_2^{(1)} &amp;= \frac{0.375^2 \times 1 + 0.315^2 \times 2 + 0.815^2 \times 5 + 0.676^2 \times 6}{0.375^2 + 0.315^2 + 0.815^2 + 0.676^2} \\
-&amp;= \frac{0.1406 \times 1 + 0.0992 \times 2 + 0.6642 \times 5 + 0.4569 \times 6}{0.1406 + 0.0992 + 0.6642 + 0.4569} \\
-&amp;= \frac{0.1406 + 0.1984 + 3.321 + 2.7414}{1.3609} \\
-&amp;= \frac{6.4014}{1.3609} \approx 4.703
-\end{aligned}
-\end{split}\]</div>
-</section>
-<hr class="docutils" />
-<section id="langkah-5-hitung-fungsi-objektif-j-m">
-<h3><strong>Langkah 5: Hitung Fungsi Objektif <span class="math notranslate nohighlight">\(J_m\)</span></strong><a class="headerlink" href="#langkah-5-hitung-fungsi-objektif-j-m" title="Link to this heading">#</a></h3>
+<section id="langkah-2-iterasi-2-hitung-centroid-baru">
+<h2><strong>Langkah 2 Iterasi 2: Hitung Centroid Baru</strong><a class="headerlink" href="#langkah-2-iterasi-2-hitung-centroid-baru" title="Link to this heading">#</a></h2>
 <div class="math notranslate nohighlight">
 \[
-J_m = \sum_{j=1}^c \sum_{i=1}^n (u_{ji})^m \cdot d^2(x_i, v_j)
+v_1^{(2)} = \frac{(0.546)^2 \cdot 1 + (0.647)^2 \cdot 2 + (0.420)^2 \cdot 5 + (0.452)^2 \cdot 6}{(0.546)^2 + (0.647)^2 + (0.420)^2 + (0.452)^2}
 \]</div>
-<hr class="docutils" />
-<p>Hitung <span class="math notranslate nohighlight">\(J_m\)</span> pada iterasi 1:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{aligned}
-J_m &amp;= \sum_{i=1}^4 (u_{1i})^2 \cdot (x_i - v_1)^2 + \sum_{i=1}^4 (u_{2i})^2 \cdot (x_i - v_2)^2 \\
-&amp;= \text{untuk } j=1: \\
-&amp;0.625^2 \times (1 - 3.574)^2 + 0.685^2 \times (2 - 3.574)^2 + 0.185^2 \times (5 - 3.574)^2 + 0.324^2 \times (6 - 3.574)^2 \\
-&amp;= 0.3906 \times 6.625 + 0.4692 \times 2.478 + 0.0342 \times 2.037 + 0.1049 \times 5.898 \\
-&amp;= 2.588 + 1.163 + 0.070 + 0.618 \\
-&amp;= 4.439 \\
-&amp;\text{untuk } j=2: \\
-&amp;0.375^2 \times (1 - 4.321)^2 + 0.315^2 \times (2 - 4.321)^2 + 0.815^2 \times (5 - 4.321)^2 + 0.676^2 \times (6 - 4.321)^2 \\
-&amp;= 0.1406 \times 11.05 + 0.0992 \times 5.39 + 0.6642 \times 0.46 + 0.4569 \times 2.83 \\
-&amp;= 1.554 + 0.535 + 0.305 + 1.292 \\
-&amp;= 3.686 \\
-&amp;J_m = 4.439 + 3.686 = 8.125
-\end{aligned}
-\end{split}\]</div>
+\[
+= \frac{0.298 \times 1 + 0.419 \times 2 + 0.176 \times 5 + 0.204 \times 6}{0.298 + 0.419 + 0.176 + 0.204}
+= \frac{0.298 + 0.838 + 0.881 + 1.224}{1.097}
+= \frac{3.241}{1.097}
+\approx 2.955
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+v_2^{(2)} = \frac{(0.454)^2 \cdot 1 + (0.353)^2 \cdot 2 + (0.580)^2 \cdot 5 + (0.548)^2 \cdot 6}{(0.454)^2 + (0.353)^2 + (0.580)^2 + (0.548)^2}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+= \frac{0.206 \times 1 + 0.125 \times 2 + 0.336 \times 5 + 0.300 \times 6}{0.206 + 0.125 + 0.336 + 0.300}
+= \frac{0.206 + 0.25 + 1.68 + 1.8}{0.967}
+= \frac{3.936}{0.967}
+\approx 4.071
+\]</div>
 </section>
 <hr class="docutils" />
-<section id="ringkasan-iterasi-dan-hasil">
-<h3>Ringkasan Iterasi dan Hasil<a class="headerlink" href="#ringkasan-iterasi-dan-hasil" title="Link to this heading">#</a></h3>
+<section id="langkah-3-iterasi-2-update-matriks-keanggotaan-u">
+<h2><strong>Langkah 3 Iterasi 2: Update Matriks Keanggotaan <span class="math notranslate nohighlight">\(U\)</span></strong><a class="headerlink" href="#langkah-3-iterasi-2-update-matriks-keanggotaan-u" title="Link to this heading">#</a></h2>
+<p>Hitung jarak baru:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Data</p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(d(x_i, v_1^{(2)})\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(d(x_i, v_2^{(2)})\)</span></p></th>
+<th class="head"><p></p></th>
+<th class="head"><p></p></th>
+<th class="head"><p></p></th>
+<th class="head"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>(</p></td>
+<td><p>1 - 2.955</p></td>
+<td><p>= 1.955)</p></td>
+<td><p>(</p></td>
+<td><p>1 - 4.071</p></td>
+<td><p>= 3.071)</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>(</p></td>
+<td><p>2 - 2.955</p></td>
+<td><p>= 0.955)</p></td>
+<td><p>(</p></td>
+<td><p>2 - 4.071</p></td>
+<td><p>= 2.071)</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>(</p></td>
+<td><p>5 - 2.955</p></td>
+<td><p>= 2.045)</p></td>
+<td><p>(</p></td>
+<td><p>5 - 4.071</p></td>
+<td><p>= 0.929)</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>(</p></td>
+<td><p>6 - 2.955</p></td>
+<td><p>= 3.045)</p></td>
+<td><p>(</p></td>
+<td><p>6 - 4.071</p></td>
+<td><p>= 1.929)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Contoh update untuk data 1:</p>
+<div class="math notranslate nohighlight">
+\[
+u_{1,1} = \frac{1}{1 + \left(\frac{1.955}{3.071}\right)^2} = \frac{1}{1 + (0.637)^2} = \frac{1}{1 + 0.406} = 0.711
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+u_{2,1} = 1 - 0.711 = 0.289
+\]</div>
+<p>Ulangi seluruh data:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Data</p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(u_{1,i}\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(u_{2,i}\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>0.711</p></td>
+<td><p>0.289</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{1}{1 + (0.955/2.071)^2} = \frac{1}{1 + 0.213^2} = 0.957\)</span></p></td>
+<td><p>0.043</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{1}{1 + (2.045/0.929)^2} = \frac{1}{1 + 4.85} = 0.171\)</span></p></td>
+<td><p>0.829</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{1}{1 + (3.045/1.929)^2} = \frac{1}{1 + 2.49} = 0.286\)</span></p></td>
+<td><p>0.714</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="docutils" />
+<section id="langkah-4-iterasi-2-cek-konvergensi">
+<h2><strong>Langkah 4 Iterasi 2: Cek Konvergensi</strong><a class="headerlink" href="#langkah-4-iterasi-2-cek-konvergensi" title="Link to this heading">#</a></h2>
+<p>Bandingkan perubahan centroid:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Cluster</p></th>
+<th class="head"><p>Iterasi 1</p></th>
+<th class="head"><p>Iterasi 2</p></th>
+<th class="head"><p>Selisih</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>3.433</p></td>
+<td><p>2.955</p></td>
+<td><p>0.478</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>3.667</p></td>
+<td><p>4.071</p></td>
+<td><p>0.404</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Belum konvergen (selisih &gt; 0.01), lanjut iterasi berikutnya dengan matriks keanggotaan baru.</p>
+</section>
+<hr class="docutils" />
+<section id="fungsi-objektif-j-m-iterasi-1">
+<h2><strong>Fungsi Objektif <span class="math notranslate nohighlight">\(J_m\)</span> (Iterasi 1)</strong><a class="headerlink" href="#fungsi-objektif-j-m-iterasi-1" title="Link to this heading">#</a></h2>
+<div class="math notranslate nohighlight">
+\[
+J_m = \sum_{j=1}^2 \sum_{i=1}^4 u_{ji}^2 \cdot d(x_i, v_j)^2
+\]</div>
+<p>Hitung untuk iterasi 1:</p>
+<ul class="simple">
+<li><p>Cluster 1:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+(0.3^2)(1-3.433)^2 + (0.2^2)(2-3.433)^2 + (0.4^2)(5-3.433)^2 + (0.1^2)(6-3.433)^2
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+= 0.09 \times 5.922 + 0.04 \times 2.045 + 0.16 \times 2.453 + 0.01 \times 6.615
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+= 0.533 + 0.082 + 0.393 + 0.066 = 1.074
+\]</div>
+<ul class="simple">
+<li><p>Cluster 2:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+(0.7^2)(1-3.667)^2 + (0.8^2)(2-3.667)^2 + (0.6^2)(5-3.667)^2 + (0.9^2)(6-3.667)^2
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+= 0.49 \times 7.112 + 0.64 \times 2.778 + 0.36 \times 1.778 + 0.81 \times 5.444
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+= 3.485 + 1.778 + 0.64 + 4.41 = 10.313
+\]</div>
+<p>Total:</p>
+<div class="math notranslate nohighlight">
+\[
+J_m = 1.074 + 10.313 = 11.387
+\]</div>
+</section>
+<hr class="docutils" />
+<section id="ringkasan-iterasi-2-iterasi-pertama-saja-untuk-ilustrasi">
+<h2><strong>Ringkasan iterasi (2 iterasi pertama saja untuk ilustrasi)</strong><a class="headerlink" href="#ringkasan-iterasi-2-iterasi-pertama-saja-untuk-ilustrasi" title="Link to this heading">#</a></h2>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Iterasi</p></th>
@@ -759,46 +924,44 @@ J_m &amp;= \sum_{i=1}^4 (u_{1i})^2 \cdot (x_i - v_1)^2 + \sum_{i=1}^4 (u_{2i})^2
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>0</p></td>
-<td><p>3.574</p></td>
-<td><p>4.321</p></td>
-<td><p>-</p></td>
-<td><p>0.6</p></td>
-<td><p>0.4</p></td>
-<td><p>0.9</p></td>
-<td><p>0.1</p></td>
-<td><p>0.4</p></td>
-<td><p>0.6</p></td>
-<td><p>0.1</p></td>
-<td><p>0.9</p></td>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>3.433</p></td>
+<td><p>3.667</p></td>
+<td><p>11.387</p></td>
+<td><p>0.300</p></td>
+<td><p>0.200</p></td>
+<td><p>0.400</p></td>
+<td><p>0.100</p></td>
+<td><p>0.700</p></td>
+<td><p>0.800</p></td>
+<td><p>0.600</p></td>
+<td><p>0.900</p></td>
 </tr>
-<tr class="row-odd"><td><p>1</p></td>
-<td><p>2.132</p></td>
-<td><p>4.703</p></td>
-<td><p>8.125</p></td>
-<td><p>0.625</p></td>
-<td><p>0.685</p></td>
-<td><p>0.185</p></td>
-<td><p>0.324</p></td>
-<td><p>0.375</p></td>
-<td><p>0.315</p></td>
-<td><p>0.815</p></td>
-<td><p>0.676</p></td>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>2.955</p></td>
+<td><p>4.071</p></td>
+<td><p>(perlu dihitung ulang)</p></td>
+<td><p>0.546</p></td>
+<td><p>0.647</p></td>
+<td><p>0.420</p></td>
+<td><p>0.452</p></td>
+<td><p>0.454</p></td>
+<td><p>0.353</p></td>
+<td><p>0.580</p></td>
+<td><p>0.548</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 </section>
 <hr class="docutils" />
-<section id="interpretasi-akhir">
-<h3>Interpretasi Akhir<a class="headerlink" href="#interpretasi-akhir" title="Link to this heading">#</a></h3>
+<section id="interpretasi-sementara">
+<h2><strong>Interpretasi Sementara</strong><a class="headerlink" href="#interpretasi-sementara" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Centroid cluster 1 berkurang dari 3.57 ke 2.13, mulai mendekati data 1 &amp; 2.</p></li>
-<li><p>Centroid cluster 2 naik dari 4.32 ke 4.70, mulai mendekati data 5 &amp; 6.</p></li>
-<li><p>Fungsi objektif menurun dari iterasi awal, menunjukkan peningkatan clustering.</p></li>
-<li><p>Iterasi berikutnya dilakukan dengan update matriks keanggotaan baru sampai perubahan centroid &lt; 0.01.</p></li>
+<li><p>Centroid cluster mendekati 3–4, artinya data cenderung terdistribusi di tengah antara 1-6.</p></li>
+<li><p>Fungsi objektif menurun dari iterasi awal ke iterasi berikutnya (harus dihitung ulang secara teliti).</p></li>
+<li><p>Matriks keanggotaan memperlihatkan bagaimana data mulai lebih jelas dikelompokkan.</p></li>
 </ul>
-</section>
 </section>
 <hr class="docutils" />
 <section id="implementasi-python">
@@ -810,23 +973,23 @@ J_m &amp;= \sum_{i=1}^4 (u_{1i})^2 \cdot (x_i - v_1)^2 + \sum_{i=1}^4 (u_{2i})^2
 
 <span class="c1"># Data dan parameter</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>  <span class="c1"># Data satu dimensi</span>
-<span class="n">c</span> <span class="o">=</span> <span class="mi">2</span>                       <span class="c1"># Jumlah cluster</span>
-<span class="n">m</span> <span class="o">=</span> <span class="mf">2.0</span>                     <span class="c1"># Tingkat fuzziness</span>
-<span class="n">epsilon</span> <span class="o">=</span> <span class="mf">0.01</span>              <span class="c1"># Ambang batas konvergensi</span>
-<span class="n">max_iter</span> <span class="o">=</span> <span class="mi">100</span>              <span class="c1"># Maksimum iterasi</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mi">2</span>                      <span class="c1"># Jumlah cluster</span>
+<span class="n">m</span> <span class="o">=</span> <span class="mf">2.0</span>                    <span class="c1"># Tingkat fuzziness</span>
+<span class="n">epsilon</span> <span class="o">=</span> <span class="mf">0.01</span>             <span class="c1"># Ambang batas konvergensi</span>
+<span class="n">max_iter</span> <span class="o">=</span> <span class="mi">100</span>             <span class="c1"># Maksimum iterasi</span>
 
-<span class="c1"># Inisialisasi keanggotaan U secara manual (hasil perhitungan manual awal)</span>
+<span class="c1"># Inisialisasi keanggotaan U secara manual (2 x 4)</span>
 <span class="n">U</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
-    <span class="p">[</span><span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">],</span>
-    <span class="p">[</span><span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">]</span>
+    <span class="p">[</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">],</span>
+    <span class="p">[</span><span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">]</span>
 <span class="p">])</span>
 
-<span class="c1"># Fungsi untuk menghitung centroid</span>
+<span class="c1"># Fungsi untuk menghitung pusat cluster</span>
 <span class="k">def</span> <span class="nf">calculate_centroids</span><span class="p">(</span><span class="n">U</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">m</span><span class="p">):</span>
     <span class="n">um</span> <span class="o">=</span> <span class="n">U</span> <span class="o">**</span> <span class="n">m</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">um</span> <span class="o">@</span> <span class="n">X</span><span class="p">)</span> <span class="o">/</span> <span class="n">um</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
-<span class="c1"># Fungsi untuk memperbarui matriks keanggotaan U</span>
+<span class="c1"># Fungsi untuk update matriks keanggotaan U</span>
 <span class="k">def</span> <span class="nf">update_membership</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="n">m</span><span class="p">):</span>
     <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
     <span class="n">c</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">V</span><span class="p">)</span>
@@ -835,34 +998,38 @@ J_m &amp;= \sum_{i=1}^4 (u_{1i})^2 \cdot (x_i - v_1)^2 + \sum_{i=1}^4 (u_{2i})^2
         <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">c</span><span class="p">):</span>
             <span class="n">denom_sum</span> <span class="o">=</span> <span class="mf">0.0</span>
             <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">c</span><span class="p">):</span>
-                <span class="n">dist_ratio</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">V</span><span class="p">[</span><span class="n">j</span><span class="p">])</span> <span class="o">/</span> <span class="nb">abs</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">V</span><span class="p">[</span><span class="n">k</span><span class="p">])</span> <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">V</span><span class="p">[</span><span class="n">k</span><span class="p">])</span> <span class="o">!=</span> <span class="mi">0</span> <span class="k">else</span> <span class="mf">1e-10</span>
+                <span class="n">dist_j</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">V</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+                <span class="n">dist_k</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">V</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
+                <span class="k">if</span> <span class="n">dist_k</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">dist_k</span> <span class="o">=</span> <span class="mf">1e-10</span>  <span class="c1"># menghindari pembagian nol</span>
+                <span class="n">dist_ratio</span> <span class="o">=</span> <span class="n">dist_j</span> <span class="o">/</span> <span class="n">dist_k</span>
                 <span class="n">denom_sum</span> <span class="o">+=</span> <span class="n">dist_ratio</span> <span class="o">**</span> <span class="p">(</span><span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="n">m</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
             <span class="n">U_new</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">denom_sum</span>
     <span class="k">return</span> <span class="n">U_new</span>
 
-<span class="c1"># Fungsi untuk menghitung fungsi objektif</span>
+<span class="c1"># Fungsi objektif</span>
 <span class="k">def</span> <span class="nf">objective_function</span><span class="p">(</span><span class="n">U</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">m</span><span class="p">):</span>
     <span class="n">obj</span> <span class="o">=</span> <span class="mf">0.0</span>
     <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">c</span><span class="p">):</span>
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">)):</span>
-            <span class="n">obj</span> <span class="o">+=</span> <span class="p">(</span><span class="n">U</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span> <span class="o">**</span> <span class="n">m</span><span class="p">)</span> <span class="o">*</span> <span class="p">((</span><span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">V</span><span class="p">[</span><span class="n">j</span><span class="p">])</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+            <span class="n">obj</span> <span class="o">+=</span> <span class="p">(</span><span class="n">U</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span> <span class="o">**</span> <span class="n">m</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">V</span><span class="p">[</span><span class="n">j</span><span class="p">])</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">obj</span>
 
-<span class="c1"># Proses iterasi</span>
+<span class="c1"># Iterasi sampai konvergen</span>
 <span class="n">history</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">iteration</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_iter</span><span class="p">):</span>
     <span class="n">V</span> <span class="o">=</span> <span class="n">calculate_centroids</span><span class="p">(</span><span class="n">U</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
     <span class="n">obj</span> <span class="o">=</span> <span class="n">objective_function</span><span class="p">(</span><span class="n">U</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
-    <span class="n">history</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">iteration</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">V</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span> <span class="n">U</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span> <span class="n">obj</span><span class="p">))</span>
+    <span class="n">history</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">iteration</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">V</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span> <span class="n">U</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span> <span class="n">obj</span><span class="p">))</span>
 
     <span class="n">U_new</span> <span class="o">=</span> <span class="n">update_membership</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
-    <span class="n">V_new</span> <span class="o">=</span> <span class="n">calculate_centroids</span><span class="p">(</span><span class="n">U_new</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
 
-    <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">V</span> <span class="o">-</span> <span class="n">V_new</span><span class="p">))</span> <span class="o">&lt;</span> <span class="n">epsilon</span><span class="p">:</span>
+    <span class="c1"># Cek konvergensi berdasarkan perubahan centroid</span>
+    <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">V</span> <span class="o">-</span> <span class="n">calculate_centroids</span><span class="p">(</span><span class="n">U_new</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">m</span><span class="p">)))</span> <span class="o">&lt;</span> <span class="n">epsilon</span><span class="p">:</span>
         <span class="k">break</span>
     <span class="n">U</span> <span class="o">=</span> <span class="n">U_new</span>
 
-<span class="c1"># Hasil ke DataFrame agar mudah dibaca</span>
+<span class="c1"># Konversi hasil ke DataFrame agar mudah dibaca</span>
 <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">iter_num</span><span class="p">,</span> <span class="n">centroids</span><span class="p">,</span> <span class="n">membership</span><span class="p">,</span> <span class="n">obj_val</span> <span class="ow">in</span> <span class="n">history</span><span class="p">:</span>
     <span class="n">result</span> <span class="o">=</span> <span class="p">{</span>
@@ -877,22 +1044,24 @@ J_m &amp;= \sum_{i=1}^4 (u_{1i})^2 \cdot (x_i - v_1)^2 + \sum_{i=1}^4 (u_{2i})^2
     <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 
 <span class="n">df_results</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">df_results</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>  <span class="c1"># Pembulatan untuk keterbacaan</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_results</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   Iterasi  Centroid 1  Centroid 2  Objektif  U[1,1]  U[1,2]  U[1,3]  U[1,4]  \
-0        1      3.5746      4.3209   10.4796  0.6000  0.4000  0.9000  0.1000   
-1        2      2.1327      4.7026    5.8460  0.6246  0.6848  0.1850  0.3240   
-2        3      1.5684      5.4340    1.2451  0.9144  0.9976  0.0106  0.1012   
-3        4      1.5014      5.4988    0.9850  0.9838  0.9844  0.0157  0.0161   
+0        1      3.4333      3.6652   11.3859  0.3000  0.2000  0.4000  0.1000   
+1        2      3.0436      3.9534    8.1864  0.5454  0.5744  0.4206  0.4528   
+2        3      2.0913      4.9093    5.1401  0.6762  0.7780  0.2225  0.3240   
+3        4      1.5495      5.4506    1.1318  0.9277  0.9990  0.0010  0.0722   
+4        5      1.5001      5.4999    0.9845  0.9850  0.9832  0.0168  0.0150   
 
    U[2,1]  U[2,2]  U[2,3]  U[2,4]  
-0  0.4000  0.6000  0.1000  0.9000  
-1  0.3754  0.3152  0.8150  0.6760  
-2  0.0856  0.0024  0.9894  0.8988  
-3  0.0162  0.0156  0.9843  0.9839  
+0  0.7000  0.8000  0.6000  0.9000  
+1  0.4546  0.4256  0.5794  0.5472  
+2  0.3238  0.2220  0.7775  0.6760  
+3  0.0723  0.0010  0.9990  0.9278  
+4  0.0150  0.0168  0.9832  0.9850  
 </pre></div>
 </div>
 </div>
@@ -929,22 +1098,10 @@ J_m &amp;= \sum_{i=1}^4 (u_{1i})^2 \cdot (x_i - v_1)^2 + \sum_{i=1}^4 (u_{2i})^2
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Note: you may need to restart the kernel to use updated packages.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting scikit-fuzzy
-  Downloading scikit_fuzzy-0.5.0-py2.py3-none-any.whl.metadata (2.6 kB)
-Downloading scikit_fuzzy-0.5.0-py2.py3-none-any.whl (920 kB)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: scikit-fuzzy in /usr/local/python/3.12.1/lib/python3.12/site-packages (0.5.0)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>?25l   <span class=" -Color -Color-C237">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">0.0/920.8 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-   <span class=" -Color -Color-Red">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">920.8/920.8 kB</span> <span class=" -Color -Color-Red">34.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25h
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: scikit-fuzzy
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successfully installed scikit-fuzzy-0.5.0
-
-<span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip is available: <span class=" -Color -Color-Red">24.3.1</span> -&gt; <span class=" -Color -Color-Green">25.1.1</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip is available: <span class=" -Color -Color-Red">24.3.1</span> -&gt; <span class=" -Color -Color-Green">25.1.1</span>
 <span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> To update, run: <span class=" -Color -Color-Green">python3 -m pip install --upgrade pip</span>
 </pre></div>
 </div>
@@ -2233,29 +2390,22 @@ Iterasi 19: 3.5026
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-manual-perhitungan-fuzzy-c-means-clustering"><strong>Contoh Manual Perhitungan Fuzzy C-Means Clustering</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-dan-parameter"><strong>Data dan Parameter</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1-inisialisasi-matriks-keanggotaan-u-0"><strong>Langkah 1: Inisialisasi Matriks Keanggotaan <span class="math notranslate nohighlight">\(U^{(0)}\)</span></strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-hitung-pusat-cluster-centroid-v-j"><strong>Langkah 2: Hitung Pusat Cluster (Centroid) <span class="math notranslate nohighlight">\(v_j\)</span></strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hitung-v-1">Hitung <span class="math notranslate nohighlight">\(v_1\)</span>:</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hitung-v-2">Hitung <span class="math notranslate nohighlight">\(v_2\)</span>:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data"><strong>Data:</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jumlah-cluster-c-2"><strong>Jumlah Cluster (c):</strong> 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tingkat-fuzziness-m-2"><strong>Tingkat Fuzziness (m):</strong> 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kriteria-konvergensi-perbedaan-pusat-cluster-0-01"><strong>Kriteria Konvergensi:</strong> perbedaan pusat cluster &lt; 0.01</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-update-matriks-keanggotaan-u"><strong>Langkah 3: Update Matriks Keanggotaan <span class="math notranslate nohighlight">\(U\)</span></strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-hitung-untuk-data-x-1-1">Contoh hitung untuk data <span class="math notranslate nohighlight">\(x_1 = 1\)</span>:</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hitung-untuk-x-2-2">Hitung untuk <span class="math notranslate nohighlight">\(x_2 = 2\)</span>:</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hitung-untuk-x-3-5">Hitung untuk <span class="math notranslate nohighlight">\(x_3 = 5\)</span>:</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hitung-untuk-x-4-6">Hitung untuk <span class="math notranslate nohighlight">\(x_4 = 6\)</span>:</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-keanggotaan-baru-u-1">Matriks keanggotaan baru <span class="math notranslate nohighlight">\(U^{(1)}\)</span>:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4-cek-konvergensi"><strong>Langkah 4: Cek Konvergensi</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hitung-centroid-baru-v-1-1">Hitung Centroid Baru <span class="math notranslate nohighlight">\(v_1^{(1)}\)</span>:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hitung-centroid-baru-v-2-1">Hitung Centroid Baru <span class="math notranslate nohighlight">\(v_2^{(1)}\)</span>:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-5-hitung-fungsi-objektif-j-m"><strong>Langkah 5: Hitung Fungsi Objektif <span class="math notranslate nohighlight">\(J_m\)</span></strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ringkasan-iterasi-dan-hasil">Ringkasan Iterasi dan Hasil</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretasi-akhir">Interpretasi Akhir</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1-inisialisasi-matriks-keanggotaan-u"><strong>Langkah 1: Inisialisasi Matriks Keanggotaan <span class="math notranslate nohighlight">\(U\)</span></strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-hitung-pusat-cluster-centroid"><strong>Langkah 2: Hitung Pusat Cluster (Centroid)</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-update-matriks-keanggotaan-u"><strong>Langkah 3: Update Matriks Keanggotaan <span class="math notranslate nohighlight">\(U\)</span></strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4-cek-konvergensi"><strong>Langkah 4: Cek Konvergensi</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-iterasi-2-hitung-centroid-baru"><strong>Langkah 2 Iterasi 2: Hitung Centroid Baru</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-iterasi-2-update-matriks-keanggotaan-u"><strong>Langkah 3 Iterasi 2: Update Matriks Keanggotaan <span class="math notranslate nohighlight">\(U\)</span></strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4-iterasi-2-cek-konvergensi"><strong>Langkah 4 Iterasi 2: Cek Konvergensi</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fungsi-objektif-j-m-iterasi-1"><strong>Fungsi Objektif <span class="math notranslate nohighlight">\(J_m\)</span> (Iterasi 1)</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ringkasan-iterasi-2-iterasi-pertama-saja-untuk-ilustrasi"><strong>Ringkasan iterasi (2 iterasi pertama saja untuk ilustrasi)</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretasi-sementara"><strong>Interpretasi Sementara</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-python"><strong>Implementasi Python</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-fuzzy-c-means-untuk-data-iris-3-cluster"><strong>Implementasi Fuzzy C-Means Untuk Data Iris (3 Cluster)</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lakukan-pengambilan-dan-penggabungan-data-dari-database-serta-pemisahan-outlier"><strong>Lakukan Pengambilan dan Penggabungan Data dari Database, Serta Pemisahan Outlier</strong></a></li>
