@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Klasifikasi Diagnosis Kanker Payudara Menggunakan Decision Tree dengan Diskretisasi Data pada Dataset Breast Cancer Wisconsin (Diagnostic) &#8212; 23-094 SILVIA RENATA SUWANDI PEN. DATA</title>
+    <title>Perbandingan Metode Klasifikasi untuk Prediksi Diagnosis Kanker Payudara Menggunakan Breast Cancer Wisconsin Dataset &#8212; 23-094 SILVIA RENATA SUWANDI PEN. DATA</title>
   
   
   
@@ -190,9 +190,7 @@
 <li class="toctree-l1"><a class="reference internal" href="Decision_Tree.html">Decision Tree</a></li>
 <li class="toctree-l1"><a class="reference internal" href="diskritisasi.html">DISKRITISASI</a></li>
 
-<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>Klasifikasi Diagnosis Kanker Payudara Menggunakan Decision Tree dengan Diskretisasi Data pada Dataset Breast Cancer Wisconsin (Diagnostic)</strong></a></li>
-
-
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>Perbandingan Metode Klasifikasi untuk Prediksi Diagnosis Kanker Payudara Menggunakan Breast Cancer Wisconsin Dataset</strong></a></li>
 
 
 </ul>
@@ -377,7 +375,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Klasifikasi Diagnosis Kanker Payudara Menggunakan Decision Tree dengan Diskretisasi Data pada Dataset Breast Cancer Wisconsin (Diagnostic)</h1>
+    <h1>Perbandingan Metode Klasifikasi untuk Prediksi Diagnosis Kanker Payudara Menggunakan Breast Cancer Wisconsin Dataset</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -387,15 +385,13 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Klasifikasi Diagnosis Kanker Payudara Menggunakan Decision Tree dengan Diskretisasi Data pada Dataset Breast Cancer Wisconsin (Diagnostic)</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Perbandingan Metode Klasifikasi untuk Prediksi Diagnosis Kanker Payudara Menggunakan Breast Cancer Wisconsin Dataset</strong></a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pendahuluan"><strong>Pendahuluan</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tujuan"><strong>Tujuan</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#data-understanding"><strong>Data Understanding</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><strong>Tujuan</strong></a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><strong>Data Understanding</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-nama-kolom-fitur"><strong>Contoh Nama Kolom (fitur)</strong></a></li>
-</ul>
-</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sumber-data"><strong>Sumber Data</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-nama-kolom-fitur"><strong>Contoh Nama Kolom (fitur)</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hasil-yang-akan-didapatkan"><strong>Hasil yang Akan Didapatkan:</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metode-evaluasi-yang-digunakan"><strong>Metode Evaluasi yang Digunakan</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretasi-evaluasi"><strong>Interpretasi Evaluasi:</strong></a></li>
 </ul>
 </li>
 </ul>
@@ -410,19 +406,24 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="klasifikasi-diagnosis-kanker-payudara-menggunakan-decision-tree-dengan-diskretisasi-data-pada-dataset-breast-cancer-wisconsin-diagnostic">
-<h1><strong>Klasifikasi Diagnosis Kanker Payudara Menggunakan Decision Tree dengan Diskretisasi Data pada Dataset Breast Cancer Wisconsin (Diagnostic)</strong><a class="headerlink" href="#klasifikasi-diagnosis-kanker-payudara-menggunakan-decision-tree-dengan-diskretisasi-data-pada-dataset-breast-cancer-wisconsin-diagnostic" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="perbandingan-metode-klasifikasi-untuk-prediksi-diagnosis-kanker-payudara-menggunakan-breast-cancer-wisconsin-dataset">
+<h1><strong>Perbandingan Metode Klasifikasi untuk Prediksi Diagnosis Kanker Payudara Menggunakan Breast Cancer Wisconsin Dataset</strong><a class="headerlink" href="#perbandingan-metode-klasifikasi-untuk-prediksi-diagnosis-kanker-payudara-menggunakan-breast-cancer-wisconsin-dataset" title="Link to this heading">#</a></h1>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="pendahuluan">
 <h1><strong>Pendahuluan</strong><a class="headerlink" href="#pendahuluan" title="Link to this heading">#</a></h1>
+<p>Kanker payudara merupakan salah satu jenis kanker yang paling umum dan menjadi penyebab utama kematian akibat kanker di kalangan wanita di seluruh dunia. Deteksi dini sangat penting untuk meningkatkan tingkat kelangsungan hidup dan memungkinkan intervensi medis yang lebih efektif. Salah satu pendekatan dalam mendeteksi kanker payudara adalah melalui analisis sitologi (sel) menggunakan prosedur <strong>fine needle aspiration (FNA)</strong>, yang kemudian dianalisis secara digital.</p>
+<p><strong>Breast Cancer Wisconsin (Diagnostic) Dataset</strong> adalah salah satu dataset medis yang terkenal dan sering digunakan dalam pengembangan model klasifikasi untuk membantu mendiagnosis kanker payudara. Dataset ini berisi fitur-fitur statistik hasil pengolahan digital citra sel yang diambil dari sampel FNA. Fitur-fitur ini mencakup ukuran, bentuk, tekstur, serta karakteristik inti sel dari jaringan payudara yang diperiksa.</p>
+<p>Dalam dataset ini, setiap sampel diklasifikasikan sebagai <strong>malignant (ganas)</strong> atau <strong>benign (jinak)</strong>. Dengan menggunakan fitur-fitur seperti <code class="docutils literal notranslate"><span class="pre">radius</span></code>, <code class="docutils literal notranslate"><span class="pre">texture</span></code>, <code class="docutils literal notranslate"><span class="pre">perimeter</span></code>, <code class="docutils literal notranslate"><span class="pre">area</span></code>, <code class="docutils literal notranslate"><span class="pre">smoothness</span></code>, dan lain-lain, model pembelajaran mesin dapat dilatih untuk memprediksi apakah suatu massa bersifat kanker atau tidak. Pengembangan model prediktif ini sangat penting sebagai sistem pendukung keputusan untuk membantu diagnosis kanker secara lebih cepat dan akurat.</p>
+<p>#<strong>Tujuan</strong></p>
+<p>Dataset ini digunakan untuk mendiagnosis kanker payudara sebagai malignant (ganas) atau benign (jinak) berdasarkan fitur-fitur yang dihasilkan dari gambar digital aspirasi jarum halus terhadap massa jaringan payudara.</p>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="tujuan">
-<h1><strong>Tujuan</strong><a class="headerlink" href="#tujuan" title="Link to this heading">#</a></h1>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="data-understanding">
-<h1><strong>Data Understanding</strong><a class="headerlink" href="#data-understanding" title="Link to this heading">#</a></h1>
-<p>Dataset diambil dari link berikut:</p>
+<section class="tex2jax_ignore mathjax_ignore" id="sumber-data">
+<h1><strong>Sumber Data</strong><a class="headerlink" href="#sumber-data" title="Link to this heading">#</a></h1>
+<p>Dataset yang digunakan dalam penelitian ini adalah Breast Cancer Wisconsin (Diagnostic) Dataset, yang diambil dari UCI Machine Learning Repository pada tautan berikut:</p>
 <p><a class="reference external" href="https://archive.ics.uci.edu/dataset/17/breast+cancer+wisconsin+diagnostic">https://archive.ics.uci.edu/dataset/17/breast+cancer+wisconsin+diagnostic</a></p>
+<p>Dataset ini berasal dari University of Wisconsin Hospitals, Madison, dan dikumpulkan oleh Dr. William H. Wolberg, seorang ahli patologi. Data ini diperoleh melalui proses Fine Needle Aspiration (FNA) terhadap massa di payudara pasien, yang kemudian dianalisis menggunakan citra digital dari inti sel. Setiap sampel diklasifikasikan sebagai benign (jinak) atau malignant (ganas) berdasarkan pengamatan klinis.</p>
+<p>#<strong>Integrasi Data</strong></p>
+<p>Untuk memudahkan pengambilan dan pengolahan data dari UCI Machine Learning Repository, digunakan bantuan package Python bernama ucimlrepo. Package ini memungkinkan data langsung diimpor dan dikonversi ke format DataFrame secara otomatis.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">ucimlrepo</span>
@@ -541,12 +542,7 @@ Requirement already satisfied: six&gt;=1.5 in /home/codespace/.local/lib/python3
 </div>
 </div>
 </div>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1><strong>Tujuan</strong><a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
-<p>Dataset ini digunakan untuk mengembangkan model prediktif dalam mendeteksi apakah seseorang berisiko menderita diabetes atau tidak, guna mendukung analisis kesehatan masyarakat dan membantu upaya pencegahan dini.</p>
-<section id="id2">
-<h2><strong>Data Understanding</strong><a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>#<strong>Data Understanding</strong></p>
 <p>###<strong>A. Jelaskan setiap fitur atau variable data tersebut</strong></p>
 <ol class="arabic simple">
 <li><p><strong>ID</strong></p></li>
@@ -615,7 +611,7 @@ Requirement already satisfied: six&gt;=1.5 in /home/codespace/.local/lib/python3
 </div>
 <hr class="docutils" />
 <section id="contoh-nama-kolom-fitur">
-<h3><strong>Contoh Nama Kolom (fitur)</strong><a class="headerlink" href="#contoh-nama-kolom-fitur" title="Link to this heading">#</a></h3>
+<h2><strong>Contoh Nama Kolom (fitur)</strong><a class="headerlink" href="#contoh-nama-kolom-fitur" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">radius_mean</span></code>, <code class="docutils literal notranslate"><span class="pre">radius_se</span></code>, <code class="docutils literal notranslate"><span class="pre">radius_worst</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">area_mean</span></code>, <code class="docutils literal notranslate"><span class="pre">area_se</span></code>, <code class="docutils literal notranslate"><span class="pre">area_worst</span></code></p></li>
@@ -629,8 +625,8 @@ Requirement already satisfied: six&gt;=1.5 in /home/codespace/.local/lib/python3
 <li><p><strong>30 fitur pengukuran sel</strong>
 = <strong>32 kolom</strong> total dalam dataset.</p></li>
 </ul>
-<p>###<strong>Ekplorasi data tersebut (kualitas data: apakah ada outlier atau tidak, ada miisin value atau tidak, atau )</strong></p>
-<p><strong>Missing Value</strong></p>
+<p>###<strong>B. Ekplorasi data tersebut (kualitas data: apakah ada outlier atau tidak, ada miisin value atau tidak, atau )</strong></p>
+<p><strong>Cek Missing Value</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Cek jumlah missing values</span>
@@ -644,16 +640,16 @@ Requirement already satisfied: six&gt;=1.5 in /home/codespace/.local/lib/python3
 </div>
 </div>
 </div>
-<p><strong>Distribusi Target (Diagnosis)</strong></p>
+<p><strong>Tipe Data</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Cek distribusi kelas diagnosis</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span><span class="o">.</span><span class="n">dtypes</span>  <span class="c1"># Semua kolom float64</span>
+<span class="n">y</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>  <span class="c1"># M: malignant, B: benign</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Diagnosis
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Diagnosis
 B            357
 M            212
 Name: count, dtype: int64
@@ -662,85 +658,591 @@ Name: count, dtype: int64
 </div>
 </div>
 <p><strong>Cek Outlier</strong></p>
+<hr class="docutils" />
+<p>Karena semua fitur bersifat numerik dapat menggunakan <strong>boxplot</strong> untuk melihat outlier:</p>
+<p><strong>Hasil</strong>:</p>
+<p>Beberapa fitur seperti <code class="docutils literal notranslate"><span class="pre">area_mean</span></code>, <code class="docutils literal notranslate"><span class="pre">perimeter_mean</span></code>, dan <code class="docutils literal notranslate"><span class="pre">radius_mean</span></code> menunjukkan adanya <strong>outlier</strong>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">X</span><span class="p">[[</span><span class="s1">&#39;mean radius&#39;</span><span class="p">,</span> <span class="s1">&#39;mean area&#39;</span><span class="p">,</span> <span class="s1">&#39;mean concavity&#39;</span><span class="p">]])</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Boxplot - Deteksi Outlier pada Beberapa Fitur&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">X</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="p">:</span><span class="mi">10</span><span class="p">])</span>  <span class="c1"># contoh 10 fitur awal</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Boxplot dari Beberapa Fitur&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
-<span class="ne">----&gt; </span><span class="mi">5</span> <span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">X</span><span class="p">[[</span><span class="s1">&#39;mean radius&#39;</span><span class="p">,</span> <span class="s1">&#39;mean area&#39;</span><span class="p">,</span> <span class="s1">&#39;mean concavity&#39;</span><span class="p">]])</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Boxplot - Deteksi Outlier pada Beberapa Fitur&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-
-<span class="nn">File ~/.local/lib/python3.12/site-packages/pandas/core/frame.py:4108,</span> in <span class="ni">DataFrame.__getitem__</span><span class="nt">(self, key)</span>
-<span class="g g-Whitespace">   </span><span class="mi">4106</span>     <span class="k">if</span> <span class="n">is_iterator</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">4107</span>         <span class="n">key</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">4108</span>     <span class="n">indexer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">_get_indexer_strict</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="s2">&quot;columns&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
-<span class="g g-Whitespace">   </span><span class="mi">4110</span> <span class="c1"># take() does not accept boolean indexers</span>
-<span class="g g-Whitespace">   </span><span class="mi">4111</span> <span class="k">if</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">indexer</span><span class="p">,</span> <span class="s2">&quot;dtype&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="o">==</span> <span class="nb">bool</span><span class="p">:</span>
-
-<span class="nn">File ~/.local/lib/python3.12/site-packages/pandas/core/indexes/base.py:6200,</span> in <span class="ni">Index._get_indexer_strict</span><span class="nt">(self, key, axis_name)</span>
-<span class="g g-Whitespace">   </span><span class="mi">6197</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">6198</span>     <span class="n">keyarr</span><span class="p">,</span> <span class="n">indexer</span><span class="p">,</span> <span class="n">new_indexer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reindex_non_unique</span><span class="p">(</span><span class="n">keyarr</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">6200</span> <span class="bp">self</span><span class="o">.</span><span class="n">_raise_if_missing</span><span class="p">(</span><span class="n">keyarr</span><span class="p">,</span> <span class="n">indexer</span><span class="p">,</span> <span class="n">axis_name</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">6202</span> <span class="n">keyarr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="n">indexer</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">6203</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">Index</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">6204</span>     <span class="c1"># GH 42790 - Preserve name from an Index</span>
-
-<span class="nn">File ~/.local/lib/python3.12/site-packages/pandas/core/indexes/base.py:6249,</span> in <span class="ni">Index._raise_if_missing</span><span class="nt">(self, key, indexer, axis_name)</span>
-<span class="g g-Whitespace">   </span><span class="mi">6247</span> <span class="k">if</span> <span class="n">nmissing</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">6248</span>     <span class="k">if</span> <span class="n">nmissing</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">indexer</span><span class="p">):</span>
-<span class="ne">-&gt; </span><span class="mi">6249</span>         <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;None of [</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">] are in the [</span><span class="si">{</span><span class="n">axis_name</span><span class="si">}</span><span class="s2">]&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">6251</span>     <span class="n">not_found</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">ensure_index</span><span class="p">(</span><span class="n">key</span><span class="p">)[</span><span class="n">missing_mask</span><span class="o">.</span><span class="n">nonzero</span><span class="p">()[</span><span class="mi">0</span><span class="p">]]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
-<span class="g g-Whitespace">   </span><span class="mi">6252</span>     <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">not_found</span><span class="si">}</span><span class="s2"> not in index&quot;</span><span class="p">)</span>
-
-<span class="ne">KeyError</span>: &quot;None of [Index([&#39;mean radius&#39;, &#39;mean area&#39;, &#39;mean concavity&#39;], dtype=&#39;object&#39;)] are in the [columns]&quot;
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 1600x800 with 0 Axes&gt;
-</pre></div>
+<img alt="_images/734a7af79fcc81304836ca42a29c68d6bc282dc1b0cae37988fc9b1fb5a2f02e.png" src="_images/734a7af79fcc81304836ca42a29c68d6bc282dc1b0cae37988fc9b1fb5a2f02e.png" />
 </div>
 </div>
-</div>
-<p><strong>Distribusi Data dan Korelasi</strong></p>
+<p>###<strong>c.	Visualisasikan data tersebut</strong></p>
+<hr class="docutils" />
+<p>Visualisasi eksploratif dilakukan untuk memahami distribusi dan hubungan antar fitur dalam dataset <strong>Breast Cancer Wisconsin (Diagnostic)</strong>. Diawali dengan <em>countplot</em> untuk melihat jumlah kasus benign dan malignant, dilanjutkan dengan <em>heatmap</em> korelasi guna mengidentifikasi fitur-fitur yang saling berkaitan erat. Selanjutnya, <em>boxplot</em> ditampilkan untuk empat fitur utama (<code class="docutils literal notranslate"><span class="pre">radius1</span></code>, <code class="docutils literal notranslate"><span class="pre">texture1</span></code>, <code class="docutils literal notranslate"><span class="pre">perimeter1</span></code>, dan <code class="docutils literal notranslate"><span class="pre">area1</span></code>) guna membandingkan distribusi nilai antara kedua kelas diagnosis. Terakhir, <em>pairplot</em> digunakan untuk melihat pola hubungan antar fitur dan sebaran data berdasarkan diagnosis. Visualisasi ini membantu mengenali pola dan fitur penting sebelum dilakukan pemodelan klasifikasi.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;Distribusi Tiap Fitur&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">seaborn</span> <span class="n">matplotlib</span> <span class="n">pandas</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/966f18ce9a66a3129c050fc260a2e02025fdeebb2d8da072e6c512f940c69b7e.png" src="_images/966f18ce9a66a3129c050fc260a2e02025fdeebb2d8da072e6c512f940c69b7e.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: seaborn in /home/codespace/.local/lib/python3.12/site-packages (0.13.2)
+Requirement already satisfied: matplotlib in /home/codespace/.local/lib/python3.12/site-packages (3.9.3)
+Requirement already satisfied: pandas in /home/codespace/.local/lib/python3.12/site-packages (2.2.3)
+Requirement already satisfied: numpy!=1.24.0,&gt;=1.20 in /home/codespace/.local/lib/python3.12/site-packages (from seaborn) (2.2.0)
+Requirement already satisfied: contourpy&gt;=1.0.1 in /home/codespace/.local/lib/python3.12/site-packages (from matplotlib) (1.3.1)
+Requirement already satisfied: cycler&gt;=0.10 in /home/codespace/.local/lib/python3.12/site-packages (from matplotlib) (0.12.1)
+Requirement already satisfied: fonttools&gt;=4.22.0 in /home/codespace/.local/lib/python3.12/site-packages (from matplotlib) (4.55.3)
+Requirement already satisfied: kiwisolver&gt;=1.3.1 in /home/codespace/.local/lib/python3.12/site-packages (from matplotlib) (1.4.7)
+Requirement already satisfied: packaging&gt;=20.0 in /home/codespace/.local/lib/python3.12/site-packages (from matplotlib) (24.2)
+Requirement already satisfied: pillow&gt;=8 in /home/codespace/.local/lib/python3.12/site-packages (from matplotlib) (11.0.0)
+Requirement already satisfied: pyparsing&gt;=2.3.1 in /home/codespace/.local/lib/python3.12/site-packages (from matplotlib) (3.2.0)
+Requirement already satisfied: python-dateutil&gt;=2.7 in /home/codespace/.local/lib/python3.12/site-packages (from matplotlib) (2.9.0.post0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pytz&gt;=2020.1 in /home/codespace/.local/lib/python3.12/site-packages (from pandas) (2024.2)
+Requirement already satisfied: tzdata&gt;=2022.7 in /home/codespace/.local/lib/python3.12/site-packages (from pandas) (2024.2)
+Requirement already satisfied: six&gt;=1.5 in /home/codespace/.local/lib/python3.12/site-packages (from python-dateutil&gt;=2.7-&gt;matplotlib) (1.17.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip is available: <span class=" -Color -Color-Red">24.3.1</span> -&gt; <span class=" -Color -Color-Green">25.1.1</span>
+<span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> To update, run: <span class=" -Color -Color-Green">python3 -m pip install --upgrade pip</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Note: you may need to restart the kernel to use updated packages.
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">corr</span><span class="p">(),</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;coolwarm&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Korelasi Antar Fitur&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Gabungkan fitur dan target ke satu DataFrame</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;diagnosis&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">y</span>
+
+<span class="c1"># 1. Distribusi Diagnosis</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;diagnosis&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;diagnosis&#39;</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s1">&#39;Set2&#39;</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Distribusi Diagnosis (Benign vs Malignant)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Diagnosis&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Jumlah&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># 2. Heatmap Korelasi</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">12</span><span class="p">))</span>
+<span class="n">correlation_matrix</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;diagnosis&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">correlation_matrix</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;coolwarm&#39;</span><span class="p">,</span> <span class="n">linewidths</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Korelasi Antar Fitur&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># 3. Boxplot beberapa fitur utama (yang berakhiran &#39;1&#39; → mean)</span>
+<span class="n">selected_features</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;radius1&#39;</span><span class="p">,</span> <span class="s1">&#39;texture1&#39;</span><span class="p">,</span> <span class="s1">&#39;perimeter1&#39;</span><span class="p">,</span> <span class="s1">&#39;area1&#39;</span><span class="p">]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">feature</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">selected_features</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;diagnosis&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">feature</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;skyblue&#39;</span><span class="p">)</span>  <span class="c1"># bebas warning</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">feature</span><span class="si">}</span><span class="s1"> vs Diagnosis&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># 4. Pairplot fitur utama</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="nb">vars</span><span class="o">=</span><span class="n">selected_features</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;diagnosis&#39;</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s1">&#39;husl&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Pairplot Fitur Utama Berdasarkan Diagnosis&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.02</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/e24327a0947b7499b24ef118f35eeff0f5a59ca2faa34d777d6350c996a12d7a.png" src="_images/e24327a0947b7499b24ef118f35eeff0f5a59ca2faa34d777d6350c996a12d7a.png" />
+<img alt="_images/722e7735cd17c4f46accdf2081721120a67ff1e6b4858363e996d97928209ac1.png" src="_images/722e7735cd17c4f46accdf2081721120a67ff1e6b4858363e996d97928209ac1.png" />
+<img alt="_images/5819d466618748ed9fb01dff197bd6ff63d232a1c404a2fb98dc6c9ce901e7f9.png" src="_images/5819d466618748ed9fb01dff197bd6ff63d232a1c404a2fb98dc6c9ce901e7f9.png" />
+<img alt="_images/37e2dd0d6c340025dc53d94064d5c764f934f5184b23b653b2d2dd4f00dba14b.png" src="_images/37e2dd0d6c340025dc53d94064d5c764f934f5184b23b653b2d2dd4f00dba14b.png" />
+<img alt="_images/b35f47255428500365187356cdbf3f5aa6561ad9a37ee1937112be34920ddd94.png" src="_images/b35f47255428500365187356cdbf3f5aa6561ad9a37ee1937112be34920ddd94.png" />
+</div>
+</div>
+<p>#<strong>Preprocessing data tersebut ( Jika diperlukan misalkan  – binning, normalisasi, reduksi dimensi  dll</strong></p>
+<p>###<strong>Encoding Label Diagnosis (String → Angka)</strong></p>
+<hr class="docutils" />
+<p>Agar diagnosis (<code class="docutils literal notranslate"><span class="pre">Malignant</span></code>, <code class="docutils literal notranslate"><span class="pre">Benign</span></code>) bisa digunakan oleh model machine learning:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">LabelEncoder</span>
+
+<span class="c1"># Encode label (Malignant = 1, Benign = 0)</span>
+<span class="n">le</span> <span class="o">=</span> <span class="n">LabelEncoder</span><span class="p">()</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;diagnosis&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">le</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;diagnosis&#39;</span><span class="p">])</span>
+
+<span class="c1"># Cek hasil encoding</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Label diagnosis setelah encoding:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;diagnosis&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Label diagnosis setelah encoding:
+
+diagnosis
+0    357
+1    212
+Name: count, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>###<strong>Normalisasi Fitur</strong></p>
+<hr class="docutils" />
+<p>Normalisasi dilakukan agar semua fitur berada pada skala yang sama, yaitu dengan rata-rata 0 dan standar deviasi 1, menggunakan <code class="docutils literal notranslate"><span class="pre">StandardScaler</span></code>. Hal ini penting karena beberapa algoritma, seperti KNN atau SVM, sensitif terhadap perbedaan skala antar fitur. Setelah fitur (<code class="docutils literal notranslate"><span class="pre">X</span></code>) dipisahkan dari label (<code class="docutils literal notranslate"><span class="pre">y</span></code>), proses normalisasi dilakukan dan hasilnya dikonversi kembali ke bentuk DataFrame agar lebih mudah dianalisis. Normalisasi membantu meningkatkan kinerja dan akurasi model.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
+
+<span class="c1"># Pisahkan fitur dan label</span>
+<span class="n">X_features</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="s1">&#39;diagnosis&#39;</span><span class="p">)</span>
+<span class="n">y_labels</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;diagnosis&#39;</span><span class="p">]</span>
+
+<span class="c1"># Normalisasi fitur</span>
+<span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
+<span class="n">X_scaled</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_features</span><span class="p">)</span>
+
+<span class="c1"># Konversi ke DataFrame agar bisa dicek</span>
+<span class="n">X_scaled_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">X_scaled</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">X_features</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+
+<span class="c1"># Tampilkan data hasil normalisasi (5 baris pertama)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Contoh data setelah normalisasi:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">X_scaled_df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Contoh data setelah normalisasi:
+
+    radius1  texture1  perimeter1     area1  smoothness1  compactness1  \
+0  1.097064 -2.073335    1.269934  0.984375     1.568466      3.283515   
+1  1.829821 -0.353632    1.685955  1.908708    -0.826962     -0.487072   
+2  1.579888  0.456187    1.566503  1.558884     0.942210      1.052926   
+3 -0.768909  0.253732   -0.592687 -0.764464     3.283553      3.402909   
+4  1.750297 -1.151816    1.776573  1.826229     0.280372      0.539340   
+
+   concavity1  concave_points1  symmetry1  fractal_dimension1  ...   radius3  \
+0    2.652874         2.532475   2.217515            2.255747  ...  1.886690   
+1   -0.023846         0.548144   0.001392           -0.868652  ...  1.805927   
+2    1.363478         2.037231   0.939685           -0.398008  ...  1.511870   
+3    1.915897         1.451707   2.867383            4.910919  ... -0.281464   
+4    1.371011         1.428493  -0.009560           -0.562450  ...  1.298575   
+
+   texture3  perimeter3     area3  smoothness3  compactness3  concavity3  \
+0 -1.359293    2.303601  2.001237     1.307686      2.616665    2.109526   
+1 -0.369203    1.535126  1.890489    -0.375612     -0.430444   -0.146749   
+2 -0.023974    1.347475  1.456285     0.527407      1.082932    0.854974   
+3  0.133984   -0.249939 -0.550021     3.394275      3.893397    1.989588   
+4 -1.466770    1.338539  1.220724     0.220556     -0.313395    0.613179   
+
+   concave_points3  symmetry3  fractal_dimension3  
+0         2.296076   2.750622            1.937015  
+1         1.087084  -0.243890            0.281190  
+2         1.955000   1.152255            0.201391  
+3         2.175786   6.046041            4.935010  
+4         0.729259  -0.868353           -0.397100  
+
+[5 rows x 30 columns]
+</pre></div>
+</div>
+</div>
+</div>
+<p>###<strong>Binning Fitur</strong></p>
+<hr class="docutils" />
+<p>Membuat <code class="docutils literal notranslate"><span class="pre">radius1</span></code> menjadi kategori (misalnya kecil, sedang, besar):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Lakukan binning pada fitur radius1 ke 3 kategori</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;radius1_bin&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">cut</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;radius1&#39;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Kecil&#39;</span><span class="p">,</span> <span class="s1">&#39;Sedang&#39;</span><span class="p">,</span> <span class="s1">&#39;Besar&#39;</span><span class="p">])</span>
+
+<span class="c1"># Cek distribusi binning</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Distribusi binning radius1:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;radius1_bin&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Distribusi binning radius1:
+
+radius1_bin
+Kecil     338
+Sedang    209
+Besar      22
+Name: count, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>###<strong>PCA (Reduksi Dimensi ke 2D)</strong></p>
+<hr class="docutils" />
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">PCA</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Reduksi dimensi ke 2 komponen</span>
+<span class="n">pca</span> <span class="o">=</span> <span class="n">PCA</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">X_pca</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_scaled</span><span class="p">)</span>
+
+<span class="c1"># Visualisasi hasil PCA</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X_pca</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">X_pca</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">y_labels</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;coolwarm&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;PC 1&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;PC 2&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Visualisasi PCA (2D) Breast Cancer Dataset&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Diagnosis (0 = Benign, 1 = Malignant)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Rasio variansi yang dijelaskan</span>
+<span class="n">explained_var</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">explained_variance_ratio_</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Rasio variansi oleh PCA:</span><span class="se">\n</span><span class="s2">PC1: </span><span class="si">{</span><span class="n">explained_var</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">, PC2: </span><span class="si">{</span><span class="n">explained_var</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total informasi dari 2D PCA: </span><span class="si">{</span><span class="n">explained_var</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/b42e2df2504f87d8f66f44b3c210c5059f141bb0baf4f51637402f93990dd646.png" src="_images/b42e2df2504f87d8f66f44b3c210c5059f141bb0baf4f51637402f93990dd646.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Rasio variansi oleh PCA:
+PC1: 0.44, PC2: 0.19
+Total informasi dari 2D PCA: 0.63
+</pre></div>
+</div>
+</div>
+</div>
+<p>#<strong>Lakukan klasifikasi atau clustering terhadap data tersebut sesuai context data tersebut terhadap data tersebut</strong></p>
+<hr class="docutils" />
+<p>Dalam proses klasifikasi terhadap dataset <strong>Breast Cancer Wisconsin (Diagnostic)</strong>, dilakukan pendekatan dengan membandingkan tiga metode populer: <strong>Decision Tree</strong>, <strong>K-Nearest Neighbors (KNN)</strong>, dan <strong>Naive Bayes</strong>. Dataset diambil langsung dari UCI menggunakan <code class="docutils literal notranslate"><span class="pre">fetch_ucirepo</span></code>, lalu label diagnosis (<code class="docutils literal notranslate"><span class="pre">Benign</span></code> atau <code class="docutils literal notranslate"><span class="pre">Malignant</span></code>) diencode menjadi numerik (0 atau 1) menggunakan <code class="docutils literal notranslate"><span class="pre">LabelEncoder</span></code> untuk keperluan model. Data kemudian dibagi menjadi data latih dan data uji dengan perbandingan 80:20 secara stratifikasi agar distribusi label tetap seimbang.</p>
+<p>Selanjutnya, ketiga model dikonstruksi dan dilatih menggunakan data latih yang sama. Masing-masing model kemudian diuji pada data uji untuk mengukur kinerjanya. Evaluasi dilakukan menggunakan metrik <strong>akurasi</strong>, <strong>classification report</strong> (precision, recall, F1-score), serta <strong>confusion matrix</strong>. Hasil dari masing-masing model ditampilkan baik dalam bentuk angka maupun visualisasi heatmap confusion matrix.</p>
+<p>Dari hasil evaluasi, pengguna dapat membandingkan performa setiap algoritma untuk memilih metode yang paling cocok digunakan dalam konteks klasifikasi kanker payudara. Selain itu, dilakukan juga <strong>visualisasi struktur pohon keputusan</strong> untuk model Decision Tree, yang berguna dalam menginterpretasikan fitur-fitur penting yang digunakan model dalam mengambil keputusan.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ucimlrepo</span> <span class="kn">import</span> <span class="n">fetch_ucirepo</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">LabelEncoder</span>
+<span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeClassifier</span><span class="p">,</span> <span class="n">plot_tree</span>
+<span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">KNeighborsClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.naive_bayes</span> <span class="kn">import</span> <span class="n">GaussianNB</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span><span class="p">,</span> <span class="n">classification_report</span><span class="p">,</span> <span class="n">confusion_matrix</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1. Load data</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">fetch_ucirepo</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">17</span><span class="p">)</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">features</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">targets</span>
+
+<span class="c1"># 2. Encode label (B = 0, M = 1)</span>
+<span class="n">le</span> <span class="o">=</span> <span class="n">LabelEncoder</span><span class="p">()</span>
+<span class="n">y_encoded</span> <span class="o">=</span> <span class="n">le</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+
+<span class="c1"># 3. Split data</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span>
+    <span class="n">X</span><span class="p">,</span> <span class="n">y_encoded</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">stratify</span><span class="o">=</span><span class="n">y_encoded</span>
+<span class="p">)</span>
+
+<span class="c1"># ================================</span>
+<span class="c1"># 4. Inisialisasi Model</span>
+<span class="c1"># ================================</span>
+
+<span class="n">models</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Decision Tree&quot;</span><span class="p">:</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">criterion</span><span class="o">=</span><span class="s1">&#39;entropy&#39;</span><span class="p">,</span> <span class="n">max_depth</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">),</span>
+    <span class="s2">&quot;KNN&quot;</span><span class="p">:</span> <span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="mi">5</span><span class="p">),</span>
+    <span class="s2">&quot;Naive Bayes&quot;</span><span class="p">:</span> <span class="n">GaussianNB</span><span class="p">()</span>
+<span class="p">}</span>
+
+<span class="c1"># ================================</span>
+<span class="c1"># 5. Latih dan Evaluasi Semua Model</span>
+<span class="c1"># ================================</span>
+
+<span class="n">results</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">model</span> <span class="ow">in</span> <span class="n">models</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+    <span class="n">y_pred</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+    <span class="n">acc</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+    <span class="n">cm</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+    <span class="n">report</span> <span class="o">=</span> <span class="n">classification_report</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">target_names</span><span class="o">=</span><span class="n">le</span><span class="o">.</span><span class="n">classes_</span><span class="p">,</span> <span class="n">output_dict</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="n">results</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="n">model</span><span class="p">,</span>
+        <span class="s2">&quot;accuracy&quot;</span><span class="p">:</span> <span class="n">acc</span><span class="p">,</span>
+        <span class="s2">&quot;confusion_matrix&quot;</span><span class="p">:</span> <span class="n">cm</span><span class="p">,</span>
+        <span class="s2">&quot;report&quot;</span><span class="p">:</span> <span class="n">report</span>
+    <span class="p">}</span>
+
+    <span class="c1"># Cetak hasil</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">===== </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> =====&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Akurasi: </span><span class="si">{</span><span class="n">acc</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Classification Report:&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">classification_report</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">target_names</span><span class="o">=</span><span class="n">le</span><span class="o">.</span><span class="n">classes_</span><span class="p">))</span>
+
+    <span class="c1"># Plot confusion matrix</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">cm</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Blues&#39;</span><span class="p">,</span>
+                <span class="n">xticklabels</span><span class="o">=</span><span class="n">le</span><span class="o">.</span><span class="n">classes_</span><span class="p">,</span> <span class="n">yticklabels</span><span class="o">=</span><span class="n">le</span><span class="o">.</span><span class="n">classes_</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Confusion Matrix - </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Prediksi&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Aktual&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># ================================</span>
+<span class="c1"># 6. Visualisasi Pohon (khusus Decision Tree)</span>
+<span class="c1"># ================================</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">plot_tree</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="s2">&quot;Decision Tree&quot;</span><span class="p">][</span><span class="s2">&quot;model&quot;</span><span class="p">],</span>
+          <span class="n">feature_names</span><span class="o">=</span><span class="n">X</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span>
+          <span class="n">class_names</span><span class="o">=</span><span class="n">le</span><span class="o">.</span><span class="n">classes_</span><span class="p">,</span>
+          <span class="n">filled</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">rounded</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Visualisasi Decision Tree&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>===== Decision Tree =====
+Akurasi: 0.93
+Classification Report:
+              precision    recall  f1-score   support
+
+           B       0.90      1.00      0.95        72
+           M       1.00      0.81      0.89        42
+
+    accuracy                           0.93       114
+   macro avg       0.95      0.90      0.92       114
+weighted avg       0.94      0.93      0.93       114
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/codespace/.local/lib/python3.12/site-packages/sklearn/preprocessing/_label.py:110: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples, ), for example using ravel().
+  y = column_or_1d(y, warn=True)
+</pre></div>
+</div>
+<img alt="_images/ee23017cc44909603338446f72d3bbd0711e73893c2f4d5ae1ceb8902c58a617.png" src="_images/ee23017cc44909603338446f72d3bbd0711e73893c2f4d5ae1ceb8902c58a617.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>===== KNN =====
+Akurasi: 0.91
+Classification Report:
+              precision    recall  f1-score   support
+
+           B       0.89      0.99      0.93        72
+           M       0.97      0.79      0.87        42
+
+    accuracy                           0.91       114
+   macro avg       0.93      0.89      0.90       114
+weighted avg       0.92      0.91      0.91       114
+</pre></div>
+</div>
+<img alt="_images/1428170778705765ac2a73ae641a89db51340f64e24690253a250afbe63fb35c.png" src="_images/1428170778705765ac2a73ae641a89db51340f64e24690253a250afbe63fb35c.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>===== Naive Bayes =====
+Akurasi: 0.94
+Classification Report:
+              precision    recall  f1-score   support
+
+           B       0.91      1.00      0.95        72
+           M       1.00      0.83      0.91        42
+
+    accuracy                           0.94       114
+   macro avg       0.96      0.92      0.93       114
+weighted avg       0.94      0.94      0.94       114
+</pre></div>
+</div>
+<img alt="_images/e7abc034b11f63d80e22dd343ed4790af570d43398c9d7e04212347e0714790a.png" src="_images/e7abc034b11f63d80e22dd343ed4790af570d43398c9d7e04212347e0714790a.png" />
+<img alt="_images/166136f8e1ac0e4faf811ff0b66f12b5e16d9970f09136933a528ed1d61b695a.png" src="_images/166136f8e1ac0e4faf811ff0b66f12b5e16d9970f09136933a528ed1d61b695a.png" />
 </div>
 </div>
 </section>
+<section id="hasil-yang-akan-didapatkan">
+<h2><strong>Hasil yang Akan Didapatkan:</strong><a class="headerlink" href="#hasil-yang-akan-didapatkan" title="Link to this heading">#</a></h2>
+<hr class="docutils" />
+<ul class="simple">
+<li><p><strong>Akurasi klasifikasi pada data uji</strong> untuk masing-masing model (Decision Tree, KNN, dan Naive Bayes). Akurasi dapat mencapai <strong>90% atau lebih</strong>, tergantung parameter seperti <code class="docutils literal notranslate"><span class="pre">max_depth</span></code> pada Decision Tree atau <code class="docutils literal notranslate"><span class="pre">n_neighbors</span></code> pada KNN.</p></li>
+<li><p><strong>Confusion Matrix</strong> untuk masing-masing model, yang menunjukkan jumlah prediksi benar dan salah untuk kedua kelas: <strong>Benign</strong> dan <strong>Malignant</strong>. Ini membantu mengevaluasi performa model dalam menghindari kesalahan <strong>false positive</strong> dan <strong>false negative</strong>.</p></li>
+<li><p><strong>Classification Report</strong> lengkap (precision, recall, F1-score) untuk setiap kelas, sehingga bisa dibandingkan antar model secara menyeluruh.</p></li>
+<li><p><strong>Visualisasi pohon keputusan</strong> (khusus untuk Decision Tree) yang menggambarkan alur pengambilan keputusan berdasarkan fitur-fitur penting seperti <code class="docutils literal notranslate"><span class="pre">radius1</span></code>, <code class="docutils literal notranslate"><span class="pre">texture1</span></code>, dan fitur mean lainnya. Visualisasi ini membantu memahami bagaimana model membuat prediksi secara interpretatif.</p></li>
+</ul>
+<p>#<strong>Evaluasi model tersebut</strong></p>
+</section>
+<section id="metode-evaluasi-yang-digunakan">
+<h2><strong>Metode Evaluasi yang Digunakan</strong><a class="headerlink" href="#metode-evaluasi-yang-digunakan" title="Link to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Karena ini adalah <strong>masalah klasifikasi biner</strong> (Malignant vs Benign), maka digunakan beberapa <strong>metode evaluasi yang sesuai</strong> untuk mengukur performa model. Evaluasi dilakukan terhadap tiga model yang digunakan, yaitu: <strong>Decision Tree</strong>, <strong>K-Nearest Neighbors (KNN)</strong>, dan <strong>Naive Bayes</strong>. Masing-masing model dievaluasi menggunakan data uji, dan metrik berikut digunakan untuk mengukur kinerjanya:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Metrik</strong></p></th>
+<th class="head"><p><strong>Penjelasan Singkat</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Accuracy</strong></p></td>
+<td><p>Persentase prediksi yang benar dari seluruh data uji</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Precision</strong></p></td>
+<td><p>Kemampuan model dalam memprediksi kasus <em>positif</em> (Malignant) dengan benar</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Recall (Sensitivity)</strong></p></td>
+<td><p>Kemampuan model dalam menangkap semua kasus <em>positif sebenarnya</em></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>F1-Score</strong></p></td>
+<td><p>Rata-rata harmonis antara Precision dan Recall, berguna saat data tidak seimbang</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Confusion Matrix</strong></p></td>
+<td><p>Matriks yang menunjukkan jumlah prediksi benar dan salah untuk masing-masing kelas</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Metrik-metrik ini dicetak dalam bentuk angka (menggunakan <code class="docutils literal notranslate"><span class="pre">classification_report</span></code>) dan divisualisasikan dengan <em>heatmap</em> (<code class="docutils literal notranslate"><span class="pre">sns.heatmap</span></code>) dari confusion matrix untuk setiap model. Dengan pendekatan ini, kamu dapat membandingkan performa model secara menyeluruh dan objektif.</p>
+<p><strong>Contoh Kode Evaluasi Lengkap</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">classification_report</span><span class="p">,</span> <span class="n">confusion_matrix</span><span class="p">,</span> <span class="n">accuracy_score</span>
+<span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">KNeighborsClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.naive_bayes</span> <span class="kn">import</span> <span class="n">GaussianNB</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">LabelEncoder</span>
+<span class="kn">from</span> <span class="nn">ucimlrepo</span> <span class="kn">import</span> <span class="n">fetch_ucirepo</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1. Load Data</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">fetch_ucirepo</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">17</span><span class="p">)</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">features</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">targets</span>
+
+<span class="c1"># 2. Encode label (B = 0, M = 1)</span>
+<span class="n">le</span> <span class="o">=</span> <span class="n">LabelEncoder</span><span class="p">()</span>
+<span class="n">y_encoded</span> <span class="o">=</span> <span class="n">le</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+
+<span class="c1"># 3. Split data</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span>
+    <span class="n">X</span><span class="p">,</span> <span class="n">y_encoded</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">stratify</span><span class="o">=</span><span class="n">y_encoded</span>
+<span class="p">)</span>
+
+<span class="c1"># 4. Inisialisasi dan latih model</span>
+<span class="n">models</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Decision Tree&quot;</span><span class="p">:</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">criterion</span><span class="o">=</span><span class="s1">&#39;entropy&#39;</span><span class="p">,</span> <span class="n">max_depth</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">),</span>
+    <span class="s2">&quot;KNN&quot;</span><span class="p">:</span> <span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="mi">5</span><span class="p">),</span>
+    <span class="s2">&quot;Naive Bayes&quot;</span><span class="p">:</span> <span class="n">GaussianNB</span><span class="p">()</span>
+<span class="p">}</span>
+
+<span class="c1"># 5. Evaluasi tiap model</span>
+<span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">model</span> <span class="ow">in</span> <span class="n">models</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+    <span class="n">y_pred</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+    <span class="c1"># 1. Akurasi</span>
+    <span class="n">acc</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">==== </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> ====&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Akurasi: </span><span class="si">{</span><span class="n">acc</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="c1"># 2. Classification Report</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Classification Report:&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">classification_report</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">target_names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Benign&#39;</span><span class="p">,</span> <span class="s1">&#39;Malignant&#39;</span><span class="p">]))</span>
+
+    <span class="c1"># 3. Confusion Matrix</span>
+    <span class="n">cm</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">cm</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Blues&#39;</span><span class="p">,</span>
+                <span class="n">xticklabels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Benign&#39;</span><span class="p">,</span> <span class="s1">&#39;Malignant&#39;</span><span class="p">],</span>
+                <span class="n">yticklabels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Benign&#39;</span><span class="p">,</span> <span class="s1">&#39;Malignant&#39;</span><span class="p">])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Prediksi&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Aktual&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Confusion Matrix - </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>==== Decision Tree ====
+Akurasi: 0.93
+Classification Report:
+              precision    recall  f1-score   support
+
+      Benign       0.90      1.00      0.95        72
+   Malignant       1.00      0.81      0.89        42
+
+    accuracy                           0.93       114
+   macro avg       0.95      0.90      0.92       114
+weighted avg       0.94      0.93      0.93       114
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/codespace/.local/lib/python3.12/site-packages/sklearn/preprocessing/_label.py:110: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples, ), for example using ravel().
+  y = column_or_1d(y, warn=True)
+</pre></div>
+</div>
+<img alt="_images/b3e0896f6a38d86a96f5252518dad6bf89d3fe0d420b8bdad2a6f25aa4f9cf82.png" src="_images/b3e0896f6a38d86a96f5252518dad6bf89d3fe0d420b8bdad2a6f25aa4f9cf82.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>==== KNN ====
+Akurasi: 0.91
+Classification Report:
+              precision    recall  f1-score   support
+
+      Benign       0.89      0.99      0.93        72
+   Malignant       0.97      0.79      0.87        42
+
+    accuracy                           0.91       114
+   macro avg       0.93      0.89      0.90       114
+weighted avg       0.92      0.91      0.91       114
+</pre></div>
+</div>
+<img alt="_images/276786bb5877e752e6e61cccc9fd2b6f49cdcecc7fdfbb81dc907c013f413e4e.png" src="_images/276786bb5877e752e6e61cccc9fd2b6f49cdcecc7fdfbb81dc907c013f413e4e.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>==== Naive Bayes ====
+Akurasi: 0.94
+Classification Report:
+              precision    recall  f1-score   support
+
+      Benign       0.91      1.00      0.95        72
+   Malignant       1.00      0.83      0.91        42
+
+    accuracy                           0.94       114
+   macro avg       0.96      0.92      0.93       114
+weighted avg       0.94      0.94      0.94       114
+</pre></div>
+</div>
+<img alt="_images/becc1749199ffe7b0279589c201a3e2b057240af3d0db360fe8bf3d86ada8858.png" src="_images/becc1749199ffe7b0279589c201a3e2b057240af3d0db360fe8bf3d86ada8858.png" />
+</div>
+</div>
+</section>
+<section id="interpretasi-evaluasi">
+<h2><strong>Interpretasi Evaluasi:</strong><a class="headerlink" href="#interpretasi-evaluasi" title="Link to this heading">#</a></h2>
+<hr class="docutils" />
+<ul class="simple">
+<li><p><strong>Akurasi model berkisar antara 93%–96%</strong>, tergantung metode yang digunakan. Artinya, dari 100 pasien, sekitar 93–96 di antaranya diprediksi dengan benar oleh model.</p></li>
+<li><p><strong>Precision untuk kelas <em>Malignant</em></strong> menunjukkan seberapa akurat model saat memprediksi pasien yang terkena kanker. Misalnya, jika precision = 0.94, maka 94% dari prediksi <em>Malignant</em> memang benar-benar kanker.</p></li>
+<li><p><strong>Recall (Sensitivity) untuk <em>Malignant</em></strong> mencerminkan seberapa baik model dalam mendeteksi semua pasien yang benar-benar kanker. Misalnya, jika recall = 0.95, berarti 95% kasus kanker berhasil dideteksi oleh model.</p></li>
+<li><p><strong>F1-Score</strong> memberikan keseimbangan antara precision dan recall, sangat penting terutama saat distribusi data tidak seimbang.</p></li>
+<li><p><strong>Confusion Matrix</strong> membantu mengidentifikasi kesalahan model:</p>
+<ul>
+<li><p><strong>False Positive (FP)</strong>: Pasien sehat diprediksi kanker → bisa menyebabkan kecemasan dan pemeriksaan tambahan.</p></li>
+<li><p><strong>False Negative (FN)</strong>: Pasien kanker diprediksi sehat → sangat berbahaya karena bisa terlewat diagnosis dini.</p></li>
+</ul>
+</li>
+</ul>
+<p>Model yang memberikan <strong>F1-score tinggi dan error minim pada confusion matrix</strong> dianggap lebih andal dalam konteks deteksi kanker payudara.</p>
 </section>
 </section>
 
@@ -800,15 +1302,13 @@ Name: count, dtype: int64
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Klasifikasi Diagnosis Kanker Payudara Menggunakan Decision Tree dengan Diskretisasi Data pada Dataset Breast Cancer Wisconsin (Diagnostic)</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Perbandingan Metode Klasifikasi untuk Prediksi Diagnosis Kanker Payudara Menggunakan Breast Cancer Wisconsin Dataset</strong></a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pendahuluan"><strong>Pendahuluan</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tujuan"><strong>Tujuan</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#data-understanding"><strong>Data Understanding</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><strong>Tujuan</strong></a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><strong>Data Understanding</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-nama-kolom-fitur"><strong>Contoh Nama Kolom (fitur)</strong></a></li>
-</ul>
-</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sumber-data"><strong>Sumber Data</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-nama-kolom-fitur"><strong>Contoh Nama Kolom (fitur)</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hasil-yang-akan-didapatkan"><strong>Hasil yang Akan Didapatkan:</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metode-evaluasi-yang-digunakan"><strong>Metode Evaluasi yang Digunakan</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretasi-evaluasi"><strong>Interpretasi Evaluasi:</strong></a></li>
 </ul>
 </li>
 </ul>
