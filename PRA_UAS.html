@@ -193,6 +193,12 @@
 <li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>Perbandingan Metode Klasifikasi untuk Prediksi Diagnosis Kanker Payudara Menggunakan Breast Cancer Wisconsin Dataset</strong></a></li>
 
 
+
+
+
+
+
+
 </ul>
 
     </div>
@@ -387,9 +393,28 @@
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Perbandingan Metode Klasifikasi untuk Prediksi Diagnosis Kanker Payudara Menggunakan Breast Cancer Wisconsin Dataset</strong></a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pendahuluan"><strong>Pendahuluan</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sumber-data"><strong>Sumber Data</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tujuan"><strong>Tujuan</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sumber-data"><strong>Sumber Data</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#integrasi-data"><strong>Integrasi Data</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#data-understanding"><strong>Data Understanding</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-jelaskan-setiap-fitur-atau-variable-data-tersebut"><strong>A. Jelaskan setiap fitur atau variable data tersebut</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-nama-kolom-fitur"><strong>Contoh Nama Kolom (fitur)</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b-ekplorasi-data-tersebut-kualitas-data-apakah-ada-outlier-atau-tidak-ada-miisin-value-atau-tidak-atau"><strong>B. Ekplorasi data tersebut (kualitas data: apakah ada outlier atau tidak, ada miisin value atau tidak, atau )</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#c-visualisasikan-data-tersebut"><strong>c.	Visualisasikan data tersebut</strong></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing-data-tersebut-jika-diperlukan-misalkan-binning-normalisasi-reduksi-dimensi-dll"><strong>Preprocessing data tersebut ( Jika diperlukan misalkan  – binning, normalisasi, reduksi dimensi  dll</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encoding-label-diagnosis-string-angka"><strong>Encoding Label Diagnosis (String → Angka)</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#normalisasi-fitur"><strong>Normalisasi Fitur</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#binning-fitur"><strong>Binning Fitur</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pca-reduksi-dimensi-ke-2d"><strong>PCA (Reduksi Dimensi ke 2D)</strong></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#lakukan-klasifikasi-atau-clustering-terhadap-data-tersebut-sesuai-context-data-tersebut-terhadap-data-tersebut"><strong>Lakukan klasifikasi atau clustering terhadap data tersebut sesuai context data tersebut terhadap data tersebut</strong></a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hasil-yang-akan-didapatkan"><strong>Hasil yang Akan Didapatkan:</strong></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluasi-model-tersebut"><strong>Evaluasi model tersebut</strong></a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metode-evaluasi-yang-digunakan"><strong>Metode Evaluasi yang Digunakan</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretasi-evaluasi"><strong>Interpretasi Evaluasi:</strong></a></li>
 </ul>
@@ -414,7 +439,9 @@
 <p>Kanker payudara merupakan salah satu jenis kanker yang paling umum dan menjadi penyebab utama kematian akibat kanker di kalangan wanita di seluruh dunia. Deteksi dini sangat penting untuk meningkatkan tingkat kelangsungan hidup dan memungkinkan intervensi medis yang lebih efektif. Salah satu pendekatan dalam mendeteksi kanker payudara adalah melalui analisis sitologi (sel) menggunakan prosedur <strong>fine needle aspiration (FNA)</strong>, yang kemudian dianalisis secara digital.</p>
 <p><strong>Breast Cancer Wisconsin (Diagnostic) Dataset</strong> adalah salah satu dataset medis yang terkenal dan sering digunakan dalam pengembangan model klasifikasi untuk membantu mendiagnosis kanker payudara. Dataset ini berisi fitur-fitur statistik hasil pengolahan digital citra sel yang diambil dari sampel FNA. Fitur-fitur ini mencakup ukuran, bentuk, tekstur, serta karakteristik inti sel dari jaringan payudara yang diperiksa.</p>
 <p>Dalam dataset ini, setiap sampel diklasifikasikan sebagai <strong>malignant (ganas)</strong> atau <strong>benign (jinak)</strong>. Dengan menggunakan fitur-fitur seperti <code class="docutils literal notranslate"><span class="pre">radius</span></code>, <code class="docutils literal notranslate"><span class="pre">texture</span></code>, <code class="docutils literal notranslate"><span class="pre">perimeter</span></code>, <code class="docutils literal notranslate"><span class="pre">area</span></code>, <code class="docutils literal notranslate"><span class="pre">smoothness</span></code>, dan lain-lain, model pembelajaran mesin dapat dilatih untuk memprediksi apakah suatu massa bersifat kanker atau tidak. Pengembangan model prediktif ini sangat penting sebagai sistem pendukung keputusan untuk membantu diagnosis kanker secara lebih cepat dan akurat.</p>
-<p>#<strong>Tujuan</strong></p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="tujuan">
+<h1><strong>Tujuan</strong><a class="headerlink" href="#tujuan" title="Link to this heading">#</a></h1>
 <p>Dataset ini digunakan untuk mendiagnosis kanker payudara sebagai malignant (ganas) atau benign (jinak) berdasarkan fitur-fitur yang dihasilkan dari gambar digital aspirasi jarum halus terhadap massa jaringan payudara.</p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="sumber-data">
@@ -422,7 +449,9 @@
 <p>Dataset yang digunakan dalam penelitian ini adalah Breast Cancer Wisconsin (Diagnostic) Dataset, yang diambil dari UCI Machine Learning Repository pada tautan berikut:</p>
 <p><a class="reference external" href="https://archive.ics.uci.edu/dataset/17/breast+cancer+wisconsin+diagnostic">https://archive.ics.uci.edu/dataset/17/breast+cancer+wisconsin+diagnostic</a></p>
 <p>Dataset ini berasal dari University of Wisconsin Hospitals, Madison, dan dikumpulkan oleh Dr. William H. Wolberg, seorang ahli patologi. Data ini diperoleh melalui proses Fine Needle Aspiration (FNA) terhadap massa di payudara pasien, yang kemudian dianalisis menggunakan citra digital dari inti sel. Setiap sampel diklasifikasikan sebagai benign (jinak) atau malignant (ganas) berdasarkan pengamatan klinis.</p>
-<p>#<strong>Integrasi Data</strong></p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="integrasi-data">
+<h1><strong>Integrasi Data</strong><a class="headerlink" href="#integrasi-data" title="Link to this heading">#</a></h1>
 <p>Untuk memudahkan pengambilan dan pengolahan data dari UCI Machine Learning Repository, digunakan bantuan package Python bernama ucimlrepo. Package ini memungkinkan data langsung diimpor dan dikonversi ke format DataFrame secara otomatis.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -434,7 +463,9 @@
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: ucimlrepo in /usr/local/python/3.12.1/lib/python3.12/site-packages (0.0.7)
 Requirement already satisfied: pandas&gt;=1.0.0 in /home/codespace/.local/lib/python3.12/site-packages (from ucimlrepo) (2.2.3)
 Requirement already satisfied: certifi&gt;=2020.12.5 in /home/codespace/.local/lib/python3.12/site-packages (from ucimlrepo) (2024.8.30)
-Requirement already satisfied: numpy&gt;=1.26.0 in /home/codespace/.local/lib/python3.12/site-packages (from pandas&gt;=1.0.0-&gt;ucimlrepo) (2.2.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: numpy&gt;=1.26.0 in /home/codespace/.local/lib/python3.12/site-packages (from pandas&gt;=1.0.0-&gt;ucimlrepo) (2.2.0)
 Requirement already satisfied: python-dateutil&gt;=2.8.2 in /home/codespace/.local/lib/python3.12/site-packages (from pandas&gt;=1.0.0-&gt;ucimlrepo) (2.9.0.post0)
 Requirement already satisfied: pytz&gt;=2020.1 in /home/codespace/.local/lib/python3.12/site-packages (from pandas&gt;=1.0.0-&gt;ucimlrepo) (2024.2)
 Requirement already satisfied: tzdata&gt;=2022.7 in /home/codespace/.local/lib/python3.12/site-packages (from pandas&gt;=1.0.0-&gt;ucimlrepo) (2024.2)
@@ -542,8 +573,11 @@ Requirement already satisfied: six&gt;=1.5 in /home/codespace/.local/lib/python3
 </div>
 </div>
 </div>
-<p>#<strong>Data Understanding</strong></p>
-<p>###<strong>A. Jelaskan setiap fitur atau variable data tersebut</strong></p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="data-understanding">
+<h1><strong>Data Understanding</strong><a class="headerlink" href="#data-understanding" title="Link to this heading">#</a></h1>
+<section id="a-jelaskan-setiap-fitur-atau-variable-data-tersebut">
+<h2><strong>A. Jelaskan setiap fitur atau variable data tersebut</strong><a class="headerlink" href="#a-jelaskan-setiap-fitur-atau-variable-data-tersebut" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p><strong>ID</strong></p></li>
 </ol>
@@ -610,6 +644,7 @@ Requirement already satisfied: six&gt;=1.5 in /home/codespace/.local/lib/python3
 </table>
 </div>
 <hr class="docutils" />
+</section>
 <section id="contoh-nama-kolom-fitur">
 <h2><strong>Contoh Nama Kolom (fitur)</strong><a class="headerlink" href="#contoh-nama-kolom-fitur" title="Link to this heading">#</a></h2>
 <ul class="simple">
@@ -625,7 +660,9 @@ Requirement already satisfied: six&gt;=1.5 in /home/codespace/.local/lib/python3
 <li><p><strong>30 fitur pengukuran sel</strong>
 = <strong>32 kolom</strong> total dalam dataset.</p></li>
 </ul>
-<p>###<strong>B. Ekplorasi data tersebut (kualitas data: apakah ada outlier atau tidak, ada miisin value atau tidak, atau )</strong></p>
+</section>
+<section id="b-ekplorasi-data-tersebut-kualitas-data-apakah-ada-outlier-atau-tidak-ada-miisin-value-atau-tidak-atau">
+<h2><strong>B. Ekplorasi data tersebut (kualitas data: apakah ada outlier atau tidak, ada miisin value atau tidak, atau )</strong><a class="headerlink" href="#b-ekplorasi-data-tersebut-kualitas-data-apakah-ada-outlier-atau-tidak-ada-miisin-value-atau-tidak-atau" title="Link to this heading">#</a></h2>
 <p><strong>Cek Missing Value</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -679,7 +716,9 @@ Name: count, dtype: int64
 <img alt="_images/734a7af79fcc81304836ca42a29c68d6bc282dc1b0cae37988fc9b1fb5a2f02e.png" src="_images/734a7af79fcc81304836ca42a29c68d6bc282dc1b0cae37988fc9b1fb5a2f02e.png" />
 </div>
 </div>
-<p>###<strong>c.	Visualisasikan data tersebut</strong></p>
+</section>
+<section id="c-visualisasikan-data-tersebut">
+<h2><strong>c.	Visualisasikan data tersebut</strong><a class="headerlink" href="#c-visualisasikan-data-tersebut" title="Link to this heading">#</a></h2>
 <hr class="docutils" />
 <p>Visualisasi eksploratif dilakukan untuk memahami distribusi dan hubungan antar fitur dalam dataset <strong>Breast Cancer Wisconsin (Diagnostic)</strong>. Diawali dengan <em>countplot</em> untuk melihat jumlah kasus benign dan malignant, dilanjutkan dengan <em>heatmap</em> korelasi guna mengidentifikasi fitur-fitur yang saling berkaitan erat. Selanjutnya, <em>boxplot</em> ditampilkan untuk empat fitur utama (<code class="docutils literal notranslate"><span class="pre">radius1</span></code>, <code class="docutils literal notranslate"><span class="pre">texture1</span></code>, <code class="docutils literal notranslate"><span class="pre">perimeter1</span></code>, dan <code class="docutils literal notranslate"><span class="pre">area1</span></code>) guna membandingkan distribusi nilai antara kedua kelas diagnosis. Terakhir, <em>pairplot</em> digunakan untuk melihat pola hubungan antar fitur dan sebaran data berdasarkan diagnosis. Visualisasi ini membantu mengenali pola dan fitur penting sebelum dilakukan pemodelan klasifikasi.</p>
 <div class="cell docutils container">
@@ -701,11 +740,11 @@ Requirement already satisfied: packaging&gt;=20.0 in /home/codespace/.local/lib/
 Requirement already satisfied: pillow&gt;=8 in /home/codespace/.local/lib/python3.12/site-packages (from matplotlib) (11.0.0)
 Requirement already satisfied: pyparsing&gt;=2.3.1 in /home/codespace/.local/lib/python3.12/site-packages (from matplotlib) (3.2.0)
 Requirement already satisfied: python-dateutil&gt;=2.7 in /home/codespace/.local/lib/python3.12/site-packages (from matplotlib) (2.9.0.post0)
+Requirement already satisfied: pytz&gt;=2020.1 in /home/codespace/.local/lib/python3.12/site-packages (from pandas) (2024.2)
+Requirement already satisfied: tzdata&gt;=2022.7 in /home/codespace/.local/lib/python3.12/site-packages (from pandas) (2024.2)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pytz&gt;=2020.1 in /home/codespace/.local/lib/python3.12/site-packages (from pandas) (2024.2)
-Requirement already satisfied: tzdata&gt;=2022.7 in /home/codespace/.local/lib/python3.12/site-packages (from pandas) (2024.2)
-Requirement already satisfied: six&gt;=1.5 in /home/codespace/.local/lib/python3.12/site-packages (from python-dateutil&gt;=2.7-&gt;matplotlib) (1.17.0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: six&gt;=1.5 in /home/codespace/.local/lib/python3.12/site-packages (from python-dateutil&gt;=2.7-&gt;matplotlib) (1.17.0)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip is available: <span class=" -Color -Color-Red">24.3.1</span> -&gt; <span class=" -Color -Color-Green">25.1.1</span>
@@ -768,8 +807,12 @@ Requirement already satisfied: six&gt;=1.5 in /home/codespace/.local/lib/python3
 <img alt="_images/b35f47255428500365187356cdbf3f5aa6561ad9a37ee1937112be34920ddd94.png" src="_images/b35f47255428500365187356cdbf3f5aa6561ad9a37ee1937112be34920ddd94.png" />
 </div>
 </div>
-<p>#<strong>Preprocessing data tersebut ( Jika diperlukan misalkan  – binning, normalisasi, reduksi dimensi  dll</strong></p>
-<p>###<strong>Encoding Label Diagnosis (String → Angka)</strong></p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="preprocessing-data-tersebut-jika-diperlukan-misalkan-binning-normalisasi-reduksi-dimensi-dll">
+<h1><strong>Preprocessing data tersebut ( Jika diperlukan misalkan  – binning, normalisasi, reduksi dimensi  dll</strong><a class="headerlink" href="#preprocessing-data-tersebut-jika-diperlukan-misalkan-binning-normalisasi-reduksi-dimensi-dll" title="Link to this heading">#</a></h1>
+<section id="encoding-label-diagnosis-string-angka">
+<h2><strong>Encoding Label Diagnosis (String → Angka)</strong><a class="headerlink" href="#encoding-label-diagnosis-string-angka" title="Link to this heading">#</a></h2>
 <hr class="docutils" />
 <p>Agar diagnosis (<code class="docutils literal notranslate"><span class="pre">Malignant</span></code>, <code class="docutils literal notranslate"><span class="pre">Benign</span></code>) bisa digunakan oleh model machine learning:</p>
 <div class="cell docutils container">
@@ -797,7 +840,9 @@ Name: count, dtype: int64
 </div>
 </div>
 </div>
-<p>###<strong>Normalisasi Fitur</strong></p>
+</section>
+<section id="normalisasi-fitur">
+<h2><strong>Normalisasi Fitur</strong><a class="headerlink" href="#normalisasi-fitur" title="Link to this heading">#</a></h2>
 <hr class="docutils" />
 <p>Normalisasi dilakukan agar semua fitur berada pada skala yang sama, yaitu dengan rata-rata 0 dan standar deviasi 1, menggunakan <code class="docutils literal notranslate"><span class="pre">StandardScaler</span></code>. Hal ini penting karena beberapa algoritma, seperti KNN atau SVM, sensitif terhadap perbedaan skala antar fitur. Setelah fitur (<code class="docutils literal notranslate"><span class="pre">X</span></code>) dipisahkan dari label (<code class="docutils literal notranslate"><span class="pre">y</span></code>), proses normalisasi dilakukan dan hasilnya dikonversi kembali ke bentuk DataFrame agar lebih mudah dianalisis. Normalisasi membantu meningkatkan kinerja dan akurasi model.</p>
 <div class="cell docutils container">
@@ -857,7 +902,9 @@ Name: count, dtype: int64
 </div>
 </div>
 </div>
-<p>###<strong>Binning Fitur</strong></p>
+</section>
+<section id="binning-fitur">
+<h2><strong>Binning Fitur</strong><a class="headerlink" href="#binning-fitur" title="Link to this heading">#</a></h2>
 <hr class="docutils" />
 <p>Membuat <code class="docutils literal notranslate"><span class="pre">radius1</span></code> menjadi kategori (misalnya kecil, sedang, besar):</p>
 <div class="cell docutils container">
@@ -883,7 +930,9 @@ Name: count, dtype: int64
 </div>
 </div>
 </div>
-<p>###<strong>PCA (Reduksi Dimensi ke 2D)</strong></p>
+</section>
+<section id="pca-reduksi-dimensi-ke-2d">
+<h2><strong>PCA (Reduksi Dimensi ke 2D)</strong><a class="headerlink" href="#pca-reduksi-dimensi-ke-2d" title="Link to this heading">#</a></h2>
 <hr class="docutils" />
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -920,7 +969,10 @@ Total informasi dari 2D PCA: 0.63
 </div>
 </div>
 </div>
-<p>#<strong>Lakukan klasifikasi atau clustering terhadap data tersebut sesuai context data tersebut terhadap data tersebut</strong></p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="lakukan-klasifikasi-atau-clustering-terhadap-data-tersebut-sesuai-context-data-tersebut-terhadap-data-tersebut">
+<h1><strong>Lakukan klasifikasi atau clustering terhadap data tersebut sesuai context data tersebut terhadap data tersebut</strong><a class="headerlink" href="#lakukan-klasifikasi-atau-clustering-terhadap-data-tersebut-sesuai-context-data-tersebut-terhadap-data-tersebut" title="Link to this heading">#</a></h1>
 <hr class="docutils" />
 <p>Dalam proses klasifikasi terhadap dataset <strong>Breast Cancer Wisconsin (Diagnostic)</strong>, dilakukan pendekatan dengan membandingkan tiga metode populer: <strong>Decision Tree</strong>, <strong>K-Nearest Neighbors (KNN)</strong>, dan <strong>Naive Bayes</strong>. Dataset diambil langsung dari UCI menggunakan <code class="docutils literal notranslate"><span class="pre">fetch_ucirepo</span></code>, lalu label diagnosis (<code class="docutils literal notranslate"><span class="pre">Benign</span></code> atau <code class="docutils literal notranslate"><span class="pre">Malignant</span></code>) diencode menjadi numerik (0 atau 1) menggunakan <code class="docutils literal notranslate"><span class="pre">LabelEncoder</span></code> untuk keperluan model. Data kemudian dibagi menjadi data latih dan data uji dengan perbandingan 80:20 secara stratifikasi agar distribusi label tetap seimbang.</p>
 <p>Selanjutnya, ketiga model dikonstruksi dan dilatih menggunakan data latih yang sama. Masing-masing model kemudian diuji pada data uji untuk mengukur kinerjanya. Evaluasi dilakukan menggunakan metrik <strong>akurasi</strong>, <strong>classification report</strong> (precision, recall, F1-score), serta <strong>confusion matrix</strong>. Hasil dari masing-masing model ditampilkan baik dalam bentuk angka maupun visualisasi heatmap confusion matrix.</p>
@@ -1067,7 +1119,6 @@ weighted avg       0.94      0.94      0.94       114
 <img alt="_images/166136f8e1ac0e4faf811ff0b66f12b5e16d9970f09136933a528ed1d61b695a.png" src="_images/166136f8e1ac0e4faf811ff0b66f12b5e16d9970f09136933a528ed1d61b695a.png" />
 </div>
 </div>
-</section>
 <section id="hasil-yang-akan-didapatkan">
 <h2><strong>Hasil yang Akan Didapatkan:</strong><a class="headerlink" href="#hasil-yang-akan-didapatkan" title="Link to this heading">#</a></h2>
 <hr class="docutils" />
@@ -1077,8 +1128,10 @@ weighted avg       0.94      0.94      0.94       114
 <li><p><strong>Classification Report</strong> lengkap (precision, recall, F1-score) untuk setiap kelas, sehingga bisa dibandingkan antar model secara menyeluruh.</p></li>
 <li><p><strong>Visualisasi pohon keputusan</strong> (khusus untuk Decision Tree) yang menggambarkan alur pengambilan keputusan berdasarkan fitur-fitur penting seperti <code class="docutils literal notranslate"><span class="pre">radius1</span></code>, <code class="docutils literal notranslate"><span class="pre">texture1</span></code>, dan fitur mean lainnya. Visualisasi ini membantu memahami bagaimana model membuat prediksi secara interpretatif.</p></li>
 </ul>
-<p>#<strong>Evaluasi model tersebut</strong></p>
 </section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="evaluasi-model-tersebut">
+<h1><strong>Evaluasi model tersebut</strong><a class="headerlink" href="#evaluasi-model-tersebut" title="Link to this heading">#</a></h1>
 <section id="metode-evaluasi-yang-digunakan">
 <h2><strong>Metode Evaluasi yang Digunakan</strong><a class="headerlink" href="#metode-evaluasi-yang-digunakan" title="Link to this heading">#</a></h2>
 <hr class="docutils" />
@@ -1304,9 +1357,28 @@ weighted avg       0.94      0.94      0.94       114
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Perbandingan Metode Klasifikasi untuk Prediksi Diagnosis Kanker Payudara Menggunakan Breast Cancer Wisconsin Dataset</strong></a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pendahuluan"><strong>Pendahuluan</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sumber-data"><strong>Sumber Data</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tujuan"><strong>Tujuan</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sumber-data"><strong>Sumber Data</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#integrasi-data"><strong>Integrasi Data</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#data-understanding"><strong>Data Understanding</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-jelaskan-setiap-fitur-atau-variable-data-tersebut"><strong>A. Jelaskan setiap fitur atau variable data tersebut</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-nama-kolom-fitur"><strong>Contoh Nama Kolom (fitur)</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b-ekplorasi-data-tersebut-kualitas-data-apakah-ada-outlier-atau-tidak-ada-miisin-value-atau-tidak-atau"><strong>B. Ekplorasi data tersebut (kualitas data: apakah ada outlier atau tidak, ada miisin value atau tidak, atau )</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#c-visualisasikan-data-tersebut"><strong>c.	Visualisasikan data tersebut</strong></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing-data-tersebut-jika-diperlukan-misalkan-binning-normalisasi-reduksi-dimensi-dll"><strong>Preprocessing data tersebut ( Jika diperlukan misalkan  – binning, normalisasi, reduksi dimensi  dll</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encoding-label-diagnosis-string-angka"><strong>Encoding Label Diagnosis (String → Angka)</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#normalisasi-fitur"><strong>Normalisasi Fitur</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#binning-fitur"><strong>Binning Fitur</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pca-reduksi-dimensi-ke-2d"><strong>PCA (Reduksi Dimensi ke 2D)</strong></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#lakukan-klasifikasi-atau-clustering-terhadap-data-tersebut-sesuai-context-data-tersebut-terhadap-data-tersebut"><strong>Lakukan klasifikasi atau clustering terhadap data tersebut sesuai context data tersebut terhadap data tersebut</strong></a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hasil-yang-akan-didapatkan"><strong>Hasil yang Akan Didapatkan:</strong></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluasi-model-tersebut"><strong>Evaluasi model tersebut</strong></a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metode-evaluasi-yang-digunakan"><strong>Metode Evaluasi yang Digunakan</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretasi-evaluasi"><strong>Interpretasi Evaluasi:</strong></a></li>
 </ul>
