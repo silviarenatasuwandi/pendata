@@ -415,8 +415,7 @@
 </li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#integrasi-model-dengan-web"><em>Integrasi Model dengan Web</em></a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hasil-web"><strong>Hasil Web</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#integrasi-model-dengan-web"><strong>Integrasi Model dengan Web</strong></a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#link-web"><strong>Link Web</strong></a></li>
 </ul>
 </li>
@@ -457,7 +456,9 @@ Requirement already satisfied: numpy&gt;=1.26.0 in /home/codespace/.local/lib/py
 Requirement already satisfied: python-dateutil&gt;=2.8.2 in /home/codespace/.local/lib/python3.12/site-packages (from pandas&gt;=1.0.0-&gt;ucimlrepo) (2.9.0.post0)
 Requirement already satisfied: pytz&gt;=2020.1 in /home/codespace/.local/lib/python3.12/site-packages (from pandas&gt;=1.0.0-&gt;ucimlrepo) (2024.2)
 Requirement already satisfied: tzdata&gt;=2022.7 in /home/codespace/.local/lib/python3.12/site-packages (from pandas&gt;=1.0.0-&gt;ucimlrepo) (2024.2)
-Requirement already satisfied: six&gt;=1.5 in /home/codespace/.local/lib/python3.12/site-packages (from python-dateutil&gt;=2.8.2-&gt;pandas&gt;=1.0.0-&gt;ucimlrepo) (1.17.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: six&gt;=1.5 in /home/codespace/.local/lib/python3.12/site-packages (from python-dateutil&gt;=2.8.2-&gt;pandas&gt;=1.0.0-&gt;ucimlrepo) (1.17.0)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip is available: <span class=" -Color -Color-Red">24.3.1</span> -&gt; <span class=" -Color -Color-Green">25.1.1</span>
@@ -1441,25 +1442,10 @@ weighted avg       0.83      0.83      0.83        60
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="integrasi-model-dengan-web">
-<h1><em>Integrasi Model dengan Web</em><a class="headerlink" href="#integrasi-model-dengan-web" title="Link to this heading">#</a></h1>
-<p>Untuk mengintegrasikan model machine learning ke dalam aplikasi web, saya menggunakan framework *Flask. Proses integrasi dimulai dengan menyimpan model terbaik yang telah dilatih sebelumnya (menggunakan algoritma *<em>Random Forest</em>) ke dalam file .pkl menggunakan modul joblib. Selain itu, saya juga menyimpan <em>scaler</em> yang digunakan untuk normalisasi data input agar model menerima data dalam format yang sesuai saat prediksi dilakukan.</p>
-<p>Selanjutnya, saya membuat file <a class="reference external" href="http://app.py">app.py</a> yang berfungsi sebagai inti dari aplikasi web. Dalam file ini:</p>
-<ul class="simple">
-<li><p>Saya memuat model dan scaler yang sudah disimpan</p></li>
-<li><p>Menyediakan route untuk menampilkan form input (menggunakan template index.html)</p></li>
-<li><p>Menyediakan route untuk menerima input dari user dan mengembalikan hasil prediksi</p></li>
-</ul>
-<p>Untuk antarmuka pengguna, saya menggunakan template HTML (index.html) yang dirancang dengan <em>Bootstrap</em> agar tampil menarik dan bertema kesehatan/jantung. Formulir input mencakup semua fitur penting seperti usia, tekanan darah, kadar sodium, diabetes, dan lainnya. Hasil prediksi akan menampilkan apakah pasien <em>berisiko meninggal atau tidak</em> berdasarkan data yang diinput.</p>
-<hr class="docutils" />
-<section id="hasil-web">
-<h2><strong>Hasil Web</strong><a class="headerlink" href="#hasil-web" title="Link to this heading">#</a></h2>
-<p>Aplikasi dapat dijalankan secara lokal melalui <a class="reference external" href="https://didactic-space-spoon-pj79qvw6xj7p27x5j-8501.app.github.dev/">Prediksi Risiko Kematian Pasien Gagal Jantung</a>. Berikut adalah tampilan web-nya:</p>
-<ul class="simple">
-<li><p>Formulir input lengkap untuk memasukkan data pasien</p></li>
-<li><p>Tombol “Prediksi” untuk melihat hasil</p></li>
-<li><p>Hasil ditampilkan dalam bentuk teks yang mudah dipahami oleh pengguna</p></li>
-</ul>
-</section>
+<h1><strong>Integrasi Model dengan Web</strong><a class="headerlink" href="#integrasi-model-dengan-web" title="Link to this heading">#</a></h1>
+<p>Untuk mengintegrasikan model machine learning ke dalam aplikasi web, saya menggunakan framework <strong>Streamlit</strong>. Model terbaik yang telah dilatih sebelumnya menggunakan algoritma <strong>Random Forest</strong> disimpan ke dalam file <code class="docutils literal notranslate"><span class="pre">.pkl</span></code> menggunakan modul <code class="docutils literal notranslate"><span class="pre">joblib</span></code>. Selain model, saya juga menyimpan objek <strong>scaler</strong> yang digunakan untuk menormalisasi data input agar prediksi dilakukan dengan format data yang sesuai seperti saat training.</p>
+<p>Proses integrasi dilakukan dalam file <code class="docutils literal notranslate"><span class="pre">app.py</span></code> yang berperan sebagai inti aplikasi Streamlit. Di dalamnya, saya memuat model dan scaler, menyediakan antarmuka pengguna untuk memasukkan data, serta menampilkan hasil prediksi secara langsung.</p>
+<p>Antarmuka pengguna dirancang menyerupai formulir kesehatan, mencakup input penting seperti: usia, tekanan darah, kadar sodium, diabetes, dan lainnya.</p>
 <section id="link-web">
 <h2><strong>Link Web</strong><a class="headerlink" href="#link-web" title="Link to this heading">#</a></h2>
 <p><a class="reference external" href="https://didactic-space-spoon-pj79qvw6xj7p27x5j-8501.app.github.dev/">https://didactic-space-spoon-pj79qvw6xj7p27x5j-8501.app.github.dev/</a></p>
@@ -1536,8 +1522,7 @@ weighted avg       0.83      0.83      0.83        60
 </li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#integrasi-model-dengan-web"><em>Integrasi Model dengan Web</em></a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hasil-web"><strong>Hasil Web</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#integrasi-model-dengan-web"><strong>Integrasi Model dengan Web</strong></a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#link-web"><strong>Link Web</strong></a></li>
 </ul>
 </li>
